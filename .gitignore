@@ -1,1 +1,8 @@
-public/*
+public/
+/exampleSite/resources/
+/exampleSite/.hugo_build.lock
+
+node_modules/
+build/
+
+.directory
