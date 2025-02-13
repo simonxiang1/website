@@ -1,0 +1,4 @@
+<div {% if class %}class="{{class}} center"{% else %}class="center"{% endif %}>
+  <img src="{{id}}" {% if alt %}alt="{{alt}}"{% endif %} {% if size %}style="max-width: {{size}};"{% endif %}>
+  {% if caption %}<div class="caption">{{caption}}</div>{% endif %}
+</div>
