@@ -1,9 +1,9 @@
 +++
 paginate_by = 15
-title = "Blog posts"
+title = "Blog Posts"
 sort_by = "date"
 page_template = "blog-page.html"
 +++
 
-> List of all *[tags](/tags)*
+A collection of musings about math from my early college days.
 

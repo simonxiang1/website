@@ -14,7 +14,12 @@
 <ul class="titleList">
 {% for page in pages %}
   <li>
-    <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+    <a href="{{ page.permalink | safe }}">
+        {% if page.extra.is_archive %}
+        <em>[Archive]</em>
+        {% endif %}
+        {{ page.title }}
+    </a>
     <br />
     {{ page.description }}
   </li>

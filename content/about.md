@@ -18,6 +18,5 @@ Lately, I’ve been spending more time on computer science and machine learning.
 ## Personal
 - In college, I did a lot of triathlon training. Since the city I live in now isn't conducive to this, I play a lot of table tennis nowadays.
 - I like Linux --- I [daily drove Arch Linux](https://github.com/simonxiang1/dotfiles) for ~2 years. While I now use MacOS, I'm still a `vim` fiend.
-- I also prefer software that doesn't spy on me.
 - Recently, I rekindled my old hobby of learning Japanese after discovering a nice tool called [jpdb.io](https://jpdb.io). This prompted me to create my [KKLC Lookup](https://kanji.simonxiang.xyz) project, as the default mnemonics were ... not good.
 - I enjoy a good latte ☕ and matcha 🍵.
