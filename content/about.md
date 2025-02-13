@@ -8,7 +8,7 @@ I studied pure mathematics at UT Austin and graduated in Fall 2023. During under
 
 At some point, I got interested in how mathematical thinking could be applied beyond pure theory. This led me to explore areas like statistics, machine learning, and *quantum information*. My coursework ranged from *measure-theoretic probability* to *neural networks* and algorithms.
 
-{{ img(id="images/sesame.jpeg", alt="A picture of a cat.", caption="Interjection: A picture of my cat, Sesame.", size="50%") }}
+{{ img(id="/images/sesame.jpeg", alt="A picture of a cat.", caption="Interjection: A picture of my cat, Sesame.", size="50%") }}
 
 
 After graduating, I spent a little less than a year working as a quantitative researcher at a small quant shop called **North Cut Trading**. There, I developed systematic trading strategies, ran regressions, and optimized portfolios.
