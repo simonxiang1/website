@@ -33,7 +33,6 @@ internal_level = "warn"
 [extra]
 author = "Simon Xiang"
 display_author = true
-render_math = false
 
 favicon = "favicon.ico"
 image = ""
