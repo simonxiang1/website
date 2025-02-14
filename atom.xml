@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Home | Simon Xiang</title>
+    <subtitle>Simon Xiang&#x27;s personal website.</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://simonxiang.xyz/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://simonxiang.xyz"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2020-11-29T00:00:00+00:00</updated>
+    <id>https://simonxiang.xyz/atom.xml</id>
+    <entry xml:lang="en">
+        <title>What I&#x27;ve Been Studying: Attack of the Categories</title>
+        <published>2020-11-29T00:00:00+00:00</published>
+        <updated>2020-11-29T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://simonxiang.xyz/blog/what-ive-been-studying-attack-of-the-categories/"/>
+        <id>https://simonxiang.xyz/blog/what-ive-been-studying-attack-of-the-categories/</id>
+        
+        <content type="html" xml:base="https://simonxiang.xyz/blog/what-ive-been-studying-attack-of-the-categories/">&lt;p&gt;Now that the institution of learning has temporarily ceased operation, I can finally get to studying academic material, which is what I wanted to do all along. Sadly school got in the way. I’ve seen people post what they’ve been learning online, not so much as something that others would be interested in, but rather as a time capsule and reflection of sorts. Which seemed like a mighty fine idea, hence this post. Here’s what I’ve been studying over Thanksgiving break (more loosely, somewhat recently), now that I have no tedious homework or essays to write. The main topic was algebraic topology, as always.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;category-theory&quot;&gt;Category Theory&lt;&#x2F;h3&gt;
+&lt;p&gt;As the title suggests, I’ve been brushing up on some category theory.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Specifically, I added some constructions to my list of examples like the homotopy category $\mathsf{hTop}$ and the chain complex functors and algebraic homology functor, the latter two when composed assign a sequence of abelian homology groups to a space.&lt;&#x2F;li&gt;
+&lt;li&gt;The biggest development was wrapping my head around &lt;strong&gt;products&lt;&#x2F;strong&gt; and &lt;strong&gt;coproducts&lt;&#x2F;strong&gt; of categories. These satisfy &lt;em&gt;universal properties&lt;&#x2F;em&gt;, that is, when they exist relative to some morphisms, they’re unique. Coproducts are the dual categorical construction of products by reversing the arrows, they take inclusion maps into a space uniquely, the set theoretic example being the disjoint union. We can also generalize these to more than two objects by means of &lt;strong&gt;cones&lt;&#x2F;strong&gt; and &lt;strong&gt;cocones&lt;&#x2F;strong&gt;, and later on limits and colimits.&lt;&#x2F;li&gt;
+&lt;li&gt;I reviewed what &lt;strong&gt;monomorphisms&lt;&#x2F;strong&gt; and &lt;strong&gt;epimorphisms&lt;&#x2F;strong&gt; were, and realized the boundary maps $H_n(X,A)\overset{\partial}{\longrightarrow}H_{n-1}(A)$ and the the change-of-coefficient homomorphisms $H_n(X;G_1)\to H_n(X;G_2)$ as natural transformations.&lt;&#x2F;li&gt;
+&lt;li&gt;If I have time, I plan on learning about the Yoneda lemma, limits and colimits, pullbacks and pushouts, and abelian categories.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;algebraic-topology&quot;&gt;Algebraic Topology&lt;&#x2F;h3&gt;
+&lt;p&gt;Everything I learn is to aid my study of algebraic topology, of course, but here is the pure algebraic topology concepts I covered. The big development was reveiwing shaky foundations, including&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Cell complexes.&lt;&#x2F;strong&gt; Hatcher’s exposition was way too dense for me at the beginning of the semester, but now that I’ve matured a little I revisited it in depth and it actually makes a lot of sense. The general idea of building complexes by attaching higher dimensional cells is intuitive (and worked somewhat for most of the semester), but I finally worked out the details of the structure of attaching maps and cells. Specifically, forming the $n$-skeleton $X^n$ from $X^{n-1}$ by attaching $n$-cells $e_{\alpha}^n$ via maps $\varphi_{\alpha} \colon S^{n-1} \to X^{n-1}$, where $X^n=X^{n-1}\amalg_{\alpha}D_{\alpha}^n&#x2F;\sim$ and $\sim$ is the relation $x\sim \varphi_{\alpha}(x)$ for $x\in \partial D_{\alpha}^n=S^{n-1}$ to get $X^n=X^{n-1}\amalg_{\alpha}e_{\alpha}^n$ made no sense to me. So I worked out examples with $n=1,2,3$ in detail, which illuminated the attaching formula significantly.&lt;&#x2F;li&gt;
+&lt;li&gt;There were also portions of general CW theory that I missed, like what a &lt;strong&gt;characteristic map&lt;&#x2F;strong&gt; was, and the formal definitions of a &lt;strong&gt;subcomplex&lt;&#x2F;strong&gt; and &lt;strong&gt;CW pairs&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;I covered the constructions you can do with CW complexes in depth. For example:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Products:&lt;&#x2F;strong&gt; Essentially the complex with product cells ranging over the base complexes.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Quotients:&lt;&#x2F;strong&gt; These take a CW pair $(X,A)$ and smoosh $A$ down to a point (or $0$-cell).&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Suspension:&lt;&#x2F;strong&gt; An important yet seemingly weird construction, build from two &lt;strong&gt;cones&lt;&#x2F;strong&gt;, defined as the quotient $(X\times I)&#x2F;(X\times {0})$ to a point. For example, the suspension of the circle $S^1$ looks like a two-sided top.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Join:&lt;&#x2F;strong&gt; This joins two spaces $X$ and $Y$ by line segments between points, formally $X\times Y\times I&#x2F;\sim$ with the relation $(x,y_1,0)\sim(x,y_2,0)$ and $(x_1,y,1)\sim(x_2,y,1)$. This is a particularly confusing construction, so I worked out several examples in detail. You can also view a &lt;strong&gt;simplex&lt;&#x2F;strong&gt; as an iterated join of points.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Wedge Sum:&lt;&#x2F;strong&gt; This fundamental construction is made by identifying two spaces together at a point. For example, $S^1\vee S^1$ is the figure eight, $S^1\vee S^1\vee S^1$ is the fidget spinner, and a wedge sum of $n$ circles is the $n$-bouquet. A neat fact is that for any complex, the quotient $X^n&#x2F;X^{n-1}$ is the wedge sum of $n$-spheres $\bigvee_{\alpha}S_{\alpha}^n$, since collapsing the previous structure to a point leaves us with a bunch of $n$-cells joined at a $0$-cell, precisely the wedge sum of $n$-spheres.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Smash Product:&lt;&#x2F;strong&gt; This is a construction I have never used before, to be honest. Its the quotient of the product by collapsing the wedge sum, or $(X\times Y)&#x2F;(X\vee Y)$. You can think of it as deleting overlapping structure of the product. It makes a lot more sense with examples, some of them being:
+&lt;ul&gt;
+&lt;li&gt;The smash product of two circles $S^1\wedge S^1$ is the torus $\mathbb T$ quotient the figure eight, which can the thought of simultaneously contracting the inner ring and an outer ring, so the resulting structure is the simply-connected $2$-sphere $S^2$.&lt;&#x2F;li&gt;
+&lt;li&gt;Smashing any space $X$ and the two point sphere $S^0$ results in $X$, because $X\times S^0$ is simply two copies of $X$, and you identify a copy of $X$ to a point in the other copy of $X$, which is just $X$ again.&lt;&#x2F;li&gt;
+&lt;li&gt;To generalize the first example, the smash product of an $n$-sphere and an $m$-sphere is the $(n+m)$-sphere, or $S^n\wedge S^m=S^{n+m}.$ To see why, the product CW structure has four cells, a zero cell, an $n$-cell, an $m$-cell, and an $(n+m)$-cell. The wedge sum wedges everything but the $(n+m)$-cell together, and collapsing that to a point yields an $(n+m)$-cell plus a $0$-cell, which is precisely $S^{n+m}$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;We also have that collapsing a contractible subcomplex to a point preserves homotopy type, which can be used to show that finite connected graphs look like wedges of $S^1$, and $S^2&#x2F;S^0$ and $S^1\vee S^2$ are homotopy equivalent.&lt;&#x2F;li&gt;
+&lt;li&gt;I also reviewed the &lt;strong&gt;Euler characteristic&lt;&#x2F;strong&gt; $\chi(X)$ defined by even cells minus odd cells, or formally $\chi(X)=\sum_{n=0}^k(-1)^nc_n$. With $k=2$, and $0$-cells as vertices, $1$-cells as edges, and $2$-cells as faces, this turns out to be the familiar formula $V-E+F=2$ for convex polyhedra.&lt;&#x2F;li&gt;
+&lt;li&gt;I did an in depth study of the real projective space $\mathbb R \mathrm P^n$, focusing on how to visualize the realization of $\mathbb R \mathrm P^n$ as the sphere with antipodal points identified, that is, how $\mathbb R\mathrm P^n\cong S^n &#x2F;(v\sim -v)$. Dealing with lower dimensional cases helped, the general idea is to realize lines as a specific angle in the upper hemisphere, since they go through both and considering two sets of angles would be redundant. Then, we can inductively build $\mathbb R\mathrm P^n$ from $\mathbb R \mathrm P^0,\mathbb R \mathrm P^1$, etc by giving $\mathbb R \mathrm P^n$ a CW structure, which turns out to be one $n$-cell for each dimension. That is, $\mathbb R \mathrm P^0=e^0\cup e^1\cup \cdots \cup e^n$.&lt;&#x2F;li&gt;
+&lt;li&gt;I also covered the complex projective space $\mathbb C \mathrm P^n$, and how it has a CW structure $\mathbb C\mathrm P^n=e^0\cup e^2\cup \cdots \cup e^{2n}$. Something I would like to understand better is how exactly we visualize the construction of $\mathbb R \mathrm P^2$ and $\mathbb C \mathrm P^1$, since these immerse in $\mathbb R^3$ (Boy’s surface), but how exactly the immersions were constructed is unclear to me.&lt;&#x2F;li&gt;
+&lt;li&gt;Since we’re going to talk about homotopy theory next week, I read a little bit about the higher homotopy groups of spheres in Hatcher, and started to define the higher homotopy groups.&lt;&#x2F;li&gt;
+&lt;li&gt;Finally, I began reviewing basic fundamental concepts like the fundamental group (haha), and the fact that $\pi_1(S^1)=\mathbb Z$, since I didn’t understand that proof the first time around. I also plan on reviewing basic covering space theory.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;group-theory&quot;&gt;Group Theory&lt;&#x2F;h3&gt;
+&lt;p&gt;Before UT, I thought I knew everything there was to know about groups. This turned out to be a horribly misinformed perception of reality.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;To complement the study of products in category theory, I studied the &lt;strong&gt;direct product&lt;&#x2F;strong&gt; in depth. There’s more to it than “addition componentwise”, it turns out if you have two normal subgroups $H,K\trianglelefteq G$ where you can write every $g\in G$ uniquely as a product $hk$ for $h\in H$ and $k\in K$, and $H,K$ have trivial intersection, then the amazing fact follows that $G$ must be isomorphic to the product $H\times K$!&lt;&#x2F;li&gt;
+&lt;li&gt;Now I’m working on wrapping my head around the &lt;strong&gt;semidirect product&lt;&#x2F;strong&gt;, a generalization of the direct product by relaxing the normality of one of the subgroups. This means we have to consider the action induced by a homomorphism into the automorphism group of the normal subgroup, to defined the product as $(h_1,k_1)(h_2,k_2)=(h_1k_1\cdot h_2,k_1,k_2)$ (where $\cdot$ denotes the left action of the homomorphism $\varphi$). This is a generalization because if $\varphi$ is the trivial homomorphism the operation simply becomes the same as componentwise multiplication.&lt;&#x2F;li&gt;
+&lt;li&gt;I also reviewed the idea of &lt;strong&gt;free abelian groups&lt;&#x2F;strong&gt;, which are defined in a linear algebraic fashion but turn out to be isomorphic to copies of $\mathbb Z$, which I proved as an exercise. Furthermore, they have a &lt;em&gt;basis&lt;&#x2F;em&gt; that generates the group, and every basis has the same amount of elements.&lt;&#x2F;li&gt;
+&lt;li&gt;If I have time, I plan on completing the proof of the &lt;strong&gt;fundamental theorem of finitely generated abelian groups&lt;&#x2F;strong&gt;, something I have been interested in since my first abstract algebra course. The theorem says that every finitely generated abelian group $A$ is isomorphic to copies of $\mathbb Z$ mod prime power (nonunique), plus copies of the infinite cyclic $\mathbb Z$, or more concisely$$
+A \simeq \bigoplus_i \mathbb Z_{p_i^{k_i}}\oplus \mathbb Z^n.
+$$&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;latex&quot;&gt;LaTeX&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;I cleaned up my preamble a little (removed some comments and failed features)! I also figured out how to defined general theorem and definition environments, for example now I can do cool things like:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Zorn’s Lemma:&lt;&#x2F;strong&gt; If every chain in a poset $P$ has an upper bound, then $P$ has a maximal element.&lt;&#x2F;p&gt;
+&lt;p&gt;in LaTeX! Before, I would have to do something lame like &lt;strong&gt;Lemma&lt;&#x2F;strong&gt; (Zorn). The main purpose was for the number of constructions we can do on CW complexes, but this will certainly come in handly later if I don’t want to define an entire environment for one theorem.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;I also cleaned up the structure of my algebraic topology notes. For example, the files used to be called &lt;code&gt;notes_1.tex, notes_2.tex&lt;&#x2F;code&gt;, but now they have the appropiate naming scheme of &lt;code&gt;category_theory.tex, homology.tex&lt;&#x2F;code&gt;, etc.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;planned-learning&quot;&gt;Planned Learning&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Everything mentioned at the end of the sections above, of course.&lt;&#x2F;li&gt;
+&lt;li&gt;Our complex analysis course never covered things like analytic continuation and what a meromorphic function was, so I’ll probably take some notes on such topics in my free time.&lt;&#x2F;li&gt;
+&lt;li&gt;I also want to study more linear algebra, since at UNT we didn’t cover very much (as it was a course for engineers). Some topics include reviewing orthogonal and orthonormal bases, learning about inner product spaces, dual spaces, and tensors.&lt;&#x2F;li&gt;
+&lt;li&gt;Finally, over winter I plan to read chapter 5 of Pugh’s &lt;em&gt;Analysis&lt;&#x2F;em&gt; (the section on multivariate analysis), in preparation for my differential topology and Riemannian geometry courses next semester.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Detailed notes on every topic mentioned can be found &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;simonxiang1&#x2F;math_notes&#x2F;blob&#x2F;master&#x2F;freshman_year&#x2F;algebraic_topology&#x2F;master_notes.pdf&quot;&gt;here&lt;&#x2F;a&gt; (or more generally, &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;simonxiang1&#x2F;math_notes&#x2F;&quot;&gt;here&lt;&#x2F;a&gt;).&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>All Voting Systems are Fundamentally Screwed</title>
+        <published>2020-11-07T00:00:00+00:00</published>
+        <updated>2020-11-07T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://simonxiang.xyz/blog/all-voting-systems-are-fundamentally-screwed/"/>
+        <id>https://simonxiang.xyz/blog/all-voting-systems-are-fundamentally-screwed/</id>
+        
+        <content type="html" xml:base="https://simonxiang.xyz/blog/all-voting-systems-are-fundamentally-screwed/">&lt;p&gt;In light of the recent election, there’s a lot of talk going on about alternate voting systems like ranked choice, with claims like “Libertarians are stealing &lt;em&gt;our&lt;&#x2F;em&gt; votes!” and “with ranked choice, ____ would have won!” Here’s a mathematical approach to why &lt;strong&gt;any&lt;&#x2F;strong&gt; proposed alternative wouldn’t work. This post is based off notes from the first UT math club lecture given by Tom Gannon, you can find them &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;simonxiang1&#x2F;math_notes&#x2F;blob&#x2F;master&#x2F;freshman_year&#x2F;math_club&#x2F;master_notes.pdf&quot;&gt;here&lt;&#x2F;a&gt;. Sorry for the clickbait title. Without further ado, let’s begin.&lt;&#x2F;p&gt;
+&lt;p&gt;How would we precisely define what a voting system is? Informally, we would probably need a list of &lt;em&gt;alternatives&lt;&#x2F;em&gt; to choose from, for each person to make an ordered list of such alternatives, and have a &lt;em&gt;societal preference list&lt;&#x2F;em&gt; as the output. We would also prefer there to be more than two alternatives, since the two party system has been the cause of much complaint. Mathematically, we would define two sets $A={\text{set of outcomes}}$ and $N={\text{set of voters}}$. Then a &lt;strong&gt;voting system&lt;&#x2F;strong&gt; would be defined as a function $$
+F \colon L(A)^N \to L(A),
+$$ where $L(A)$ denotes the set of all total orderings of $A$. Each person’s individual ballot would be an $N$-tuple $(R_1,\cdots,R_N)\in L(A)^N$ (also called a &lt;em&gt;preference profile&lt;&#x2F;em&gt;). Let’s give some examples of voting systems:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;First Past the Post:&lt;&#x2F;strong&gt; This is the system we use today. Everyone will submit a ballot with their top choice, and whoever gets picked as top choice the most will win.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Borda count:&lt;&#x2F;strong&gt; This, along with instant-runoff, is a version of “ranked choice” voting that people ask for. Rate your candidates from 1-10 (not literally), then everyone’s ratings get summed up: whichever candidate with the most points wins.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Last Past the Post:&lt;&#x2F;strong&gt; This isn’t real, but serves to push the definition of a voting system: it’s like FPTP (First Past the Post), but whoever gets picked as top choice the &lt;em&gt;least&lt;&#x2F;em&gt; wins. By definition, this is still a voting system.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Dictatorship:&lt;&#x2F;strong&gt; Our favorite system. There exists a dictator among the voters, and the societal preference list is literally just the dictator’s ballot.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;We would probably want our voting system to satisfy some reasonable conditions. For example, if everyone puts in the exact same ballot, then the output should be that ballot that everyone put in right? Also, if everyone ranks candidate $A$ above candidate $B$, then in the final ranking, $A$ should be greater than $B$. These conditions are called the &lt;strong&gt;Pareto condition&lt;&#x2F;strong&gt; and &lt;strong&gt;independence of irrelevant alternatives&lt;&#x2F;strong&gt;, respectively. We could also interpret indepedence of irrelevant alternatives as such: if we add a third candidate, it won’t change the position of the other two candidates. Let’s define these conditions mathematically:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Definition:&lt;&#x2F;strong&gt; A voting system satisfies the &lt;em&gt;&lt;strong&gt;Pareto condition&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt; (unanimity) if given that an alternative $a$ is strictly greater than $b$ for all total orderings $R_1,\cdots,R_N$, then $a$ is strictly greater than $b $ in $F(R_1,\cdots, R_N)$.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Definition:&lt;&#x2F;strong&gt; A voting system is said to be &lt;em&gt;&lt;strong&gt;independent of irrelevant alternatives&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt; (denoted IIA) if for two preference profiles $(R_1,\cdots,R_N)$ and $(S_1,\cdots,S_N)$ such that for all individuals $i$, alternatives $a$ and $b$ have the same order in $R_i$ as in $S_i$, then alternatives $a$ and $b$ have the same order in $F(R_1,\cdots,R_N)$ as in $F(S_1,\cdots,S_N)$.&lt;&#x2F;p&gt;
+&lt;p&gt;These conditions seem pretty reasonable right? Let’s take a look at what each of our voting systems satisfies.&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style=&quot;text-align: left&quot;&gt;Criterion&lt;&#x2F;th&gt;&lt;th style=&quot;text-align: left&quot;&gt;FPTP&lt;&#x2F;th&gt;&lt;th style=&quot;text-align: left&quot;&gt;Borda&lt;&#x2F;th&gt;&lt;th style=&quot;text-align: left&quot;&gt;LPTP&lt;&#x2F;th&gt;&lt;th style=&quot;text-align: left&quot;&gt;Dictatorship&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: left&quot;&gt;Pareto?&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Yes&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Yes&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;No&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;YES!&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: left&quot;&gt;IIA?&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;No&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;No&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;No&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;YES!&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Pareto FPTP&lt;&#x2F;strong&gt;: If everyone chooses the same person, they will have the most votes and win&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Pareto Borda&lt;&#x2F;strong&gt;: For the same reason as FPTP&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Pareto LPTP&lt;&#x2F;strong&gt;: Everyone putting the same person first will result in them losing&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;IIA FPTP&lt;&#x2F;strong&gt;: Introducing a third party may change the results&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;IIA Borda&lt;&#x2F;strong&gt;: Same reason as FPTP but more severe since the new candidate will be weighted&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;IIA LPTP&lt;&#x2F;strong&gt;: Introducing an irrelevant alternative will probably result in them winning&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Do you see a pattern? The only voting system that satisfies both Pareto and IIA is a dictatorship! The natural question to ask then, is “are there any other systems that satisfy both Pareto and IIA”? The answer to that is &lt;strong&gt;NO!&lt;&#x2F;strong&gt; The &lt;em&gt;only&lt;&#x2F;em&gt; system that satisfies both Pareto and IIA is a dictatorship. This is called &lt;em&gt;&lt;strong&gt;Arrow’s Impossibility Theorem&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;, proving this shows that there &lt;em&gt;doesn’t exist&lt;&#x2F;em&gt; a system that satisfies Pareto, is IIA, and isn’t a dictatorship.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Theorem&lt;&#x2F;strong&gt; &lt;em&gt;(Arrow’s Impossibility Theorem)&lt;&#x2F;em&gt;&lt;strong&gt;:&lt;&#x2F;strong&gt; Assume that $V$ is a voting system with more than two alternatives which satisfies both Pareto and is independent of irrelevant alternatives. Then $V$ is a dictatorship.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Corollary:&lt;&#x2F;strong&gt; There exists no voting system that&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;has more than two alternatives,&lt;&#x2F;li&gt;
+&lt;li&gt;satisfies the Pareto condition,&lt;&#x2F;li&gt;
+&lt;li&gt;is independent of irrelevant alternatives,&lt;&#x2F;li&gt;
+&lt;li&gt;and is NOT a dictatorship.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;I won’t get into the proof: you can find it &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;simonxiang1&#x2F;math_notes&#x2F;blob&#x2F;master&#x2F;freshman_year&#x2F;math_club&#x2F;master_notes.pdf&quot;&gt;here&lt;&#x2F;a&gt;. But proving this theorem says that any voting system you could possibly come up with will fail at least one of the conditions: so in other words, if we want reasonable voting criterion with more than two candidates, no can do! This may be out of character, but here are some practical reasons why other voting systems haven’t been implemented:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Instant Runoff&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;takes too much time (and therefore money), since one voting cycle is required for each candidate&lt;&#x2F;li&gt;
+&lt;li&gt;requires too much mental energy from each voter, forcing them to make several conscious choices rather than one&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;Borda count&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;once again requires too much mental energy from each voter, forcing them to rank each candidate&lt;&#x2F;li&gt;
+&lt;li&gt;tends to elect people who are somewhat decent according to most people, rather than the best candidate that the majority want&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;Dictatorship&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;objectively the best system, since citizens of a dictatorship fairly chose their supreme leader, unlike flawed systems like FPTP&lt;&#x2F;li&gt;
+&lt;li&gt;voting system of choice in wonderful progressive democracies like North Korea, Libya, and Iraq&lt;&#x2F;li&gt;
+&lt;li&gt;this message was approved by Ali Khamenei (Supreme leader of Iran), Kim Jong-un (Supreme leader of North Korea), Mswati III (King of Swaziland), and Chairman Mao&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>My Experience With Graduate vs Undergraduate Level Courses</title>
+        <published>2020-09-05T00:00:00+00:00</published>
+        <updated>2020-09-05T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://simonxiang.xyz/blog/my-experience-with-graduate-vs-undergraduate-level-courses/"/>
+        <id>https://simonxiang.xyz/blog/my-experience-with-graduate-vs-undergraduate-level-courses/</id>
+        
+        <content type="html" xml:base="https://simonxiang.xyz/blog/my-experience-with-graduate-vs-undergraduate-level-courses/">&lt;p&gt;Back when I went to TAMS, I took “graduate” level coursework before, which had concurrent enrollment for both undergraduates and graduate students (each having their own course number, eg Math 4500 for undegraduates and Math 5600 for graduate students). To be honest, they weren’t very difficult. It felt like an accelerated undergraduate course, but still an undergraduate course. The pace was above average but not unmanageable, and the homework was very reasonable. I thought I was well prepared for graduate level mathematics, but unfortunately I was not.&lt;&#x2F;p&gt;
+&lt;p&gt;People always told me I was insane for doing so much math. It started back when I was a wee child in 9th grade, who was “insane” for trying to test out of the (oh so horribly formidable) subject of Pre-Calculus over the summer. In fact, my Algebra II teacher said she was “looking forward to seeing me earn a C or possibly fail” in Calculus, which was pretty much my driving force to succeed in 10th grade AP Calculus BC. (I got a B.)&lt;&#x2F;p&gt;
+&lt;p&gt;Then I was insane for trying to learn Real Analysis over a summer without having touched proofs before. Sure, I admit I was a little off my rocker when I signed up for this one. But I persevered, wrote a college essay on it, and started my senior year at TAMS in both Abstract Algebra and Real Analysis II (strongly against the recommendations of my Academic Advisor, who is a wonderful person by the way).&lt;&#x2F;p&gt;
+&lt;p&gt;After acing both courses, I was out of my mind for trying to take Topology (and Abstract Algebra II). I was advised by many people, some even physicists and math majors, that Topology was the hardest undergraduate course UNT had to offer. I was warned of problem sets that would take 2-3 hours per question (sounds like Harvard’s 55a), and horror stories of those who failed or dropped out of TAMS due to the class. (Galois theory was difficult too, but no one had taken it). I was told even graduate students struggled with the class!&lt;&#x2F;p&gt;
+&lt;p&gt;Now the courses were non-trivial of course, but nowhere near the level of challenge that others made them out to be. It built up a sort of false confidence, a mentality that “I can do anything! (With a non-trivial but nowhere near back-breaking amount of effort).” Because to be honest, none of these courses required an insane workload: they all built upon each other, clearly defined everything from the beginning, and if one paid attention and did all the homework and readings, weren’t very hard to do well in.&lt;&#x2F;p&gt;
+&lt;p&gt;This marks the first week of my graduate Algebraic Topology course, and I can safely say it’s the hardest thing I’ve ever attempted in my entire life, and BY FAR. I’ve spent hours and hours poring over textbook pages, going through a definiton lookup chain, grinding through homework problems, just to stay afloat. It moves at the speed of light: we defined the interval in one minute, and five minutes later, we’re talking about the fundamental group of simply connected spaces.&lt;&#x2F;p&gt;
+&lt;p&gt;Before class even started, we were assigned a pre-homework that asked five question on Manifolds and CW Complexes each. I’ve never seen a Manifold or CW Complex in my life before (at that point, I doubted whether I even learned Topology at all)! I worked on it for hours every day, looking up so many definitions and reviewing so many semesters of work, for maybe about 10 hours total, and I managed to solve … 2.5 problems! Homework 1 was a similar experience. I worked on it for 3-4 hours every day, 6 days of the week, and managed to solve about 6 problems out of 10. It feels like I’m taking Math 55a (looking at the problem sets, they’re about similar difficulty) without any of the freshman struggling with me, study groups, and tight community (thanks corona).&lt;&#x2F;p&gt;
+&lt;p&gt;I don’t really know what I’m trying to say anymore, maybe I’m just ranting. But let this act as a word of caution to qualified undergraduates attempting to register for graduate courses: expect those 3 credit hours to take up 30+ hours of work per week (or equivalently, the same or more as the rest of your undergraduate classes). There’s a reason 9 hours is full time for grad students. Of course, I’m going to make it through. I signed up for this course to push my mental boundaries, and now I’m complaining that it’s working as intended, isn’t that ridiculous? It’s going to be a long, very long, hard fight, but in the end I’ll stumble out of the ring, face covered in blood, holding up a shaky but triumphant fist.&lt;&#x2F;p&gt;
+&lt;p&gt;I was planning on adding a cheesy motivational segment here, but I’m not a good motivational speaker (it would probably have the opposite effect) so I’ll leave the reader to find the motivation themselves as an exercise. Or don’t, motivation is fickle anyways. Godspeed.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Math is Hard Because Our Short Term Memory Sucks</title>
+        <published>2020-08-07T00:00:00+00:00</published>
+        <updated>2020-08-07T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://simonxiang.xyz/blog/math-is-hard-because-our-short-term-memory-sucks/"/>
+        <id>https://simonxiang.xyz/blog/math-is-hard-because-our-short-term-memory-sucks/</id>
+        
+        <content type="html" xml:base="https://simonxiang.xyz/blog/math-is-hard-because-our-short-term-memory-sucks/">&lt;blockquote&gt;
+&lt;p&gt;I just came back from attending the 1052nd AMS (sectional) meeting at Penn State, last weekend, and realized that the Kingdom of Mathematics is dead. Instead we have a &lt;strong&gt;disjoint&lt;&#x2F;strong&gt; union of &lt;em&gt;narrow specialties&lt;&#x2F;em&gt;, and people who know everything about nothing, and nothing about anything (except their very narrow acre). Not only do they know nothing besides their narrow expertise, they don’t care!&lt;&#x2F;p&gt;
+&lt;p&gt;–Doron Zeilberger, Oct. 28, 2009&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Here’s a hot take: all the ideas we describe in math are relatively easy to grasp, but mathematicians make things complicated because of our poor short term memory. To give an example, let’s take Calculus— the ideas behind derivatives&#x2F;integration are really simple (limit of sums, limit of slopes) but we make them difficult by introducing levels of rigor and notation that leave a first year Calculus student behind in the dust.&lt;&#x2F;p&gt;
+&lt;p&gt;This applies to higher level concepts as well: I believe that groups, fields, metric spaces, topological spaces, etc are fundamentally simple, but they suddenly aren’t because of the level of rigor needed to formally approach these topics.&lt;&#x2F;p&gt;
+&lt;p&gt;Rigor arises as a process to justify logical reason, but if our long term memory capacity was higher and we remembered much more of concepts learnt earlier, then there would be no need to obfuscate math with weird symbols and definitions. We add the rigor to remind ourselves that our reasoning related to past subjects is correct, which leads to rigor being required to have further areas of study utilize the current topic.&lt;&#x2F;p&gt;
+&lt;p&gt;Of course, without rigor there would be no certainty, which is pretty much the point of math itself. So I guess we wouldn’t be studying math, it would just be another branch of science, or maybe even just pseudoscience. On the flip side, solving this issue could possibly lead to the Pre-20th century level of unification in mathematics, one that hasn’t been seen since David Hilbert.&lt;&#x2F;p&gt;
+&lt;p&gt;Ever since the 20th century, mathematics has become so vast and fractured that specialization is the only way to survive in the field. No one can claim to truly understand more than a couple of hyper-specialized fields anymore due to the immense time and effort it takes to read enough papers to become knowledgable in a field. To quote Doron Zeilberger once again, we no longer have “&lt;em&gt;mathematicians&lt;&#x2F;em&gt;”, but instead we have “&lt;em&gt;topological algebraic Lie theorists, algebraic analytic number theorists, pseudo-spectral graph theorists&lt;&#x2F;em&gt; etc”.&lt;&#x2F;p&gt;
+&lt;p&gt;This is, of course, not the fault of our mathematicians, but a natural consequence of the direction the field has been going, (and I argue) as well as our natural short term memory capacity. In an ideal world where our brains were constructed differently, we would have mathematicians consulting and working with a plethora of other mathematicians of topics at the highest level, research and developments realidly accessible to the layman that puts in 2 weeks as opposed to 20 years to understand the work, and a rapid flow of major breakthroughs (after all, great proofs like the proof of Fermat’s Last Theorem utilized the hyper-specialized work of many many fields).&lt;&#x2F;p&gt;
+&lt;p&gt;But of course, this is just wishful thinking and entertaining a fantasy “what-if” situation. Or maybe it’s just BS, and if we truly could remember more, mathematics would still end up the way it is to preserve the aspect of exclusivisity and prestige. However, it’s something interesting to think about: if we were given a choice between psuedoscience and progress as opposed to rigor and fragmentation, which would mathematicians pick?&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;em&gt;References&lt;&#x2F;em&gt;: &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;sites.math.rutgers.edu&#x2F;~zeilberg&#x2F;Opinion104.html&quot;&gt;https:&#x2F;&#x2F;sites.math.rutgers.edu&#x2F;~zeilberg&#x2F;Opinion104.html&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Linear Algebra and Its Applications, Part 2: Derivatives</title>
+        <published>2020-08-05T00:00:00+00:00</published>
+        <updated>2020-08-05T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://simonxiang.xyz/blog/linear-algebra-and-its-applications-part-2-derivatives/"/>
+        <id>https://simonxiang.xyz/blog/linear-algebra-and-its-applications-part-2-derivatives/</id>
+        
+        <content type="html" xml:base="https://simonxiang.xyz/blog/linear-algebra-and-its-applications-part-2-derivatives/">&lt;p&gt;I mentioned in my introduction post that this series would probably end up being about the applications of Linear Algebra to other fields of math or something. Well it’s the first post, and we already stopped talking about real life applications! Whoops.&lt;&#x2F;p&gt;
+&lt;p&gt;Consider the vector space with basis
+$$
+\mathscr{B} = \{ 1, x, x^2, … , x^n \}
+$$
+over $\mathbb{R}.$ This is known as the &lt;strong&gt;vector space of polynomials with real coefficients of degree n or less&lt;&#x2F;strong&gt;, denoted by $\mathbb{R}[x]$ (some texts may use $P_n)$. If it looks familiar, it probably showed up as a frequent example in your Linear Algebra problem sets (and is of extreme importance over an arbitrary field in Galois Theory)!&lt;&#x2F;p&gt;
+&lt;p&gt;Note: while in Algebra the PID $\mathbb{F}[x]$ for $\mathbb{F}$ a field contains infinite degree polynomials, in this case we will assume $\mathbb{R}[x]$ to have finite degree polynomials with maximum degree $n$.&lt;&#x2F;p&gt;
+&lt;p&gt;We can write an arbitrary element of any vector space as a &lt;strong&gt;linear combination&lt;&#x2F;strong&gt; of the elements of its basis set. In this case, an element of $\mathbb{R}[x]$ looks like a polynomial. A linear combination of the elements of $\mathscr{B}$ is of the form
+$$
+a + a_1x + a_2x^2 + … a_nx^n.
+$$
+We can use $f(x)$ and $g(x)$ to denote such linear combinations with shorthand $\sum_{i=0}^{n} a_ix^i$ for $a_i \in \mathbb{R}$. Note that $x$ &lt;em&gt;isn’t actually a variable:&lt;&#x2F;em&gt; we haven’t defined a way to evaluate $x$ and it doesn’t change based off the input. (If you’re wondering how we evaluate polynomials in the traditional sense, we use something called the &lt;em&gt;evaluation homomorphism&lt;&#x2F;em&gt;).&lt;&#x2F;p&gt;
+&lt;p&gt;We can use this vector space to do some cool things, like take ideas from Calculus and express them in the language of Linear Algebra! Remember the &lt;strong&gt;derivative&lt;&#x2F;strong&gt; from Calculus: in this case it’s a map
+$\frac{d}{dx} : \mathbb{R}[x] \to \mathbb{R}[x]$ such that
+$$\frac{d}{dx}\left(a+a_1x+…+a_nx^n\right)=a_1+2a_2x+…+na_nx^{n-1}.$$
+In summation notation, it’s saying that
+$$\frac{d}{dx}\sum_{i=0}^{n} a_ix^i = \sum_{i=0}^{n-1} (i+1)a_{i+1}x^{i}.$$
+Using the standard notations for derivatives, we can write $\frac{d}{dx}f(x)=f’(x)$ for $f(x)\in\mathbb{R}[x].$&lt;&#x2F;p&gt;
+&lt;p&gt;We can show that the map $\frac{d}{dx} : \mathbb{R}[x] \to \mathbb{R}[x]$ is &lt;strong&gt;linear&lt;&#x2F;strong&gt;. Recall that the conditions for a map $T: V \to V$ to be linear are that
+$$
+\text{1:},,T(v_1+v_2)=T(v_1)+T(v_2)
+$$
+$$
+\text{2:},,T(\alpha v) = \alpha T(v)
+$$
+for a vector space $V$ over a field $\mathbb{F}, v_i \in V, \alpha \in \mathbb{F}.$ We know that
+$$
+\frac{d}{dx}\left(f(x) + g(x)\right) = \frac{d}{dx}f(x) + \frac{d}{dx}g(x)
+$$
+for $f(x), g(x) \in \mathbb{R}[x],$ satisfying the first condition. Next,
+$$
+\frac{d}{dx}\left( c f(x) \right) = c \frac{d}{dx}f(x)
+$$
+for $c \in \mathbb{R}, f(x) \in \mathbb{R}[x],$ so $\frac{d}{dx}$ is linear.&lt;&#x2F;p&gt;
+&lt;p&gt;Furthermore, if a map from a vector space onto itself is linear, we can say it’s a &lt;em&gt;&lt;strong&gt;linear transformation.&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt; We can represent such transformations with a &lt;strong&gt;matrix.&lt;&#x2F;strong&gt; To find the matrix representation of a linear transformation, examine the column vectors that arise from the &lt;strong&gt;image of the basis set under such linear transformation.&lt;&#x2F;strong&gt; We denote this matrix as $[T]_B$ for a vector space $T$ with basis set $B$, so for the derivative operator we would denote the image of $\mathscr{B}$ under $\frac{d}{dx}$ as $[\frac{d}{dx}]_{\mathscr{B}}$.&lt;&#x2F;p&gt;
+&lt;p&gt;To find the first column vector, examine the image of $1$ under $\frac{d}{dx}$: clearly it vanishes since constants don’t change. So
+$
+[1]_{\frac{d}{dx}}=
+\Bigg[\begin{smallmatrix}
+0 \
+\vdots \
+0 \
+\end{smallmatrix}\Bigg]
+$
+Similarly, we have
+$$ [x]_{\frac{d}{dx}} =
+\begin{bmatrix}
+1 \
+0 \
+\vdots \
+0 \
+\end{bmatrix}, ,[x^2]_{\frac{d}{dx}} =
+\begin{bmatrix}
+0 \
+2 \
+0 \
+\vdots \
+0 \
+\end{bmatrix}, ,[x^3]_{\frac{d}{dx}} =
+\begin{bmatrix}
+0 \
+0 \
+3 \
+0 \
+\vdots \
+0 \
+\end{bmatrix},
+$$
+and so on. Intuitively, this is because $\frac{d}{dx}x=1, \frac{d}{dx}x^2 = 2x, \frac{d}{dx}x^3=3x^2,$ etc, and we represent those values with the vectors above if we write them as a linear transformation of the elements of $\mathscr{B}$ (e.g. $2x=0\cdot 1+2x+0x^2 + \cdots$, $3x^2=0\cdot 1+0x+3x^2+0x^3+ \cdots).$&lt;&#x2F;p&gt;
+&lt;p&gt;If we combine all these column vectors, we can find a matrix representation of the derivative! Here it is in all its glory:
+$$
+[\frac{d}{dx}]_{\mathscr{B}} =
+\begin{pmatrix}
+0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 &amp;amp; \cdots &amp;amp; 0 \
+0 &amp;amp; 0 &amp;amp; 2 &amp;amp; 0 &amp;amp; \cdots &amp;amp; 0 \
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 3 &amp;amp; \cdots &amp;amp; 0 \
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; \ddots &amp;amp; \vdots \
+\vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; n \
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \
+\end{pmatrix},
+$$
+where $\dim (\mathbb{R}[x]) = n+1$ (or $\mathbb{R}[x]$ having polynomials of a maximum degree $n$). You can multiply this matrix by some polynomial vectors in your free time to see if this really works.&lt;&#x2F;p&gt;
+&lt;p&gt;Furthermore, the derivative matrix has an interesting algebraic property in that it’s &lt;strong&gt;nilpotent.&lt;&#x2F;strong&gt; A nilpotent matrix is defined as one that eventually vanishes when multiplied by itself, that is, there exists some $k \in \mathbb{Z}$ such that
+$$
+A^k = 0,
+$$
+where $A$ is a matrix and $0$ denotes the zero matrix.&lt;&#x2F;p&gt;
+&lt;p&gt;I won’t offer a proof, but this is an intuitive result: recall from Analysis that no polynomial of finite degree is infinitely differentiable. So an arbitrary polynomial of degree $n$ will vanish if differentiated $n+1$ times, or in other words, multiplied by the matrix $\frac{d}{dx}^{n+1}$ (in Liebniz notation this would be denoted as $\frac{d^{n+1}}{dx^{n+1}}$). So clearly $\frac{d^{n+1}}{dx^{n+1}}$ corresponds to the zero matrix, and $k=n+1.$&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Algebra vs. Analysis: How do you eat your corn on the cob?</title>
+        <published>2020-08-03T00:00:00+00:00</published>
+        <updated>2020-08-03T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://simonxiang.xyz/blog/algebra-vs-analysis-how-do-you-eat-your-corn-on-the-cob/"/>
+        <id>https://simonxiang.xyz/blog/algebra-vs-analysis-how-do-you-eat-your-corn-on-the-cob/</id>
+        
+        <content type="html" xml:base="https://simonxiang.xyz/blog/algebra-vs-analysis-how-do-you-eat-your-corn-on-the-cob/">&lt;p&gt;There’s an interesting discussion about relating your mathematical field of study to the way you eat corn on the cob. This sounds ridiculous, but if you look closer, it’s actually very interesting. Here’s the hypothesis: the algebraists will eat their corn in rows, whereas analysts go in spirals.&lt;&#x2F;p&gt;
+&lt;p&gt;Of course, this isn’t a theorem because we have no way to prove this. It’s also non-trivial to partition the set of mathematicians by the “algebra” or “analysis” equivalence classes (what of the mathematician that studies algebraic topology?). However, for some reason, this rule seems to hold in most cases. Regarding the mathematicians I talked to in real life, the one who wrote his PhD on Graph Theory eats his corn in rows, whereas the one who does research in Measure Theory eats his corn in spirals.&lt;&#x2F;p&gt;
+&lt;p&gt;Personally, I liked my Algebra courses much more than my Analysis ones— I found them much more enlightening, intuitive, and interesting. People rave about the beauty of Analysis proofs, but I just saw them as confusing (perhaps this is due to the fact that Real Analysis was my first proof based course). The strange “theorem” about corn on the cob didn’t really click with me until it became personal: after some experimentation, it turns out I eat my corn in rows.&lt;&#x2F;p&gt;
+&lt;p&gt;There isn’t going to be a definitive answer as to why this happens, but we can guess. Here’s my proposition: Algebra is all about analyzing structure, which is why algebraists will see the perfectly laid out rows and follow them. Analysis is about finding patterns, which is why analysts will seek out the spiral patterns and follow those instead.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;em&gt;References&lt;&#x2F;em&gt;: &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;bentilly.blogspot.com&#x2F;2010&#x2F;08&#x2F;analysis-vs-algebra-predicts-eating.html&quot;&gt;https:&#x2F;&#x2F;bentilly.blogspot.com&#x2F;2010&#x2F;08&#x2F;analysis-vs-algebra-predicts-eating.html&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>I&#x27;m Never Going to Finish Reading Infinite Jest</title>
+        <published>2020-07-24T00:00:00+00:00</published>
+        <updated>2020-07-24T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://simonxiang.xyz/blog/im-never-going-to-finish-reading-infinite-jest/"/>
+        <id>https://simonxiang.xyz/blog/im-never-going-to-finish-reading-infinite-jest/</id>
+        
+        <content type="html" xml:base="https://simonxiang.xyz/blog/im-never-going-to-finish-reading-infinite-jest/">&lt;p&gt;The year is 2157. I’m sitting in a room with a book in my hand. No, the room is the book. If you look closely, you can make out the slight imprint of the faded words “Infinite Jest” lining the walls, miniscule page numbers spanning the contents like hieroglyphs. We turn our attention to the rest of the “room”. On the ceiling is emptiness: there is no light, or any hope of one. In the corner lie my other books, covered with a thick layer of dust. I desperately reach for my copy of Murakami’s &lt;em&gt;Kafka on the Shore&lt;&#x2F;em&gt;, grasping at anything that can bring me comfort. Maybe Nakata can lead me out of this place, to the entrance stone and into an alternate reality. Actually, at this point, I would even be OK with Johnny Walker. I brush off the layer of dust, only to reveal another layer of dust. I open the book— it’s all dust. &lt;em&gt;“Unimportant.”&lt;&#x2F;em&gt; David Foster Wallace is staring at me from the ceiling. Of course, I should have known. I take my Sailor 1911 and dip it in the ink from the pages of the room, and use it to erase the middle third of the floor. We are on the 141st iteration of the Cantor Ternary set, and I have made a total of $2^{141}-1$ deletions, which follows from a quick proof by induction.&lt;&#x2F;p&gt;
+&lt;p&gt;Of course, I am already dead, along with all my descendants, their descendants, and their descendants, all the way down to the $10^{38}$th generation. As you can probably tell by now, the year is not 2157. All $e^{e^{87.5}\ln{(2)}}$ of my descendants are cursing me for the day I decided to pick up a copy of &lt;em&gt;Infinite Jest&lt;&#x2F;em&gt; because I heard that David Foster Wallace structured it like the Sierpinski Gasket and included a two-page footnote on the MVT. I reach for the pen— there is no pen. David Foster Wallace is looking into my soul, which is quite easy to do since my body has long since disintegrated away. I too, look into my soul, and see a fine print lightly embroidered along the edges. “Infinite Jest”, it reads. Once again, David Foster Wallace reminds me that there is no hope. As I turn of a page of the wall, a small television in the corner of the ceiling flickers and updates. The television is watching my every move. “40%”, it reads. I resign myself to my fate and erase another third of the floor.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Linear Algebra and Its Applications, Part 1: An Introduction</title>
+        <published>2020-07-23T00:00:00+00:00</published>
+        <updated>2020-07-23T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://simonxiang.xyz/blog/linear-algebra-and-its-applications-part-1-an-introduction/"/>
+        <id>https://simonxiang.xyz/blog/linear-algebra-and-its-applications-part-1-an-introduction/</id>
+        
+        <content type="html" xml:base="https://simonxiang.xyz/blog/linear-algebra-and-its-applications-part-1-an-introduction/">&lt;p&gt;Yes, the title refers to that one horrid textbook that everybody uses. I hope that reading the title brought back some fond memories of your first Linear Algebra course!&lt;&#x2F;p&gt;
+&lt;p&gt;Welcome to my new series on the many applications of Linear Algebra! I’m not exactly sure which applications I’ll cover or how many just yet, but for now I’ll just go with the flow. I’m also not much of an applied mathematician, so I’ll probably end up writing about the applications of Linear Algebra in other fields of math or something like that.&lt;&#x2F;p&gt;
+&lt;p&gt;Linear Algebra pops up seemingly everywhere— if we rephrase “systems of linear equations” as “many equations that seem somewhat straight if you zoom in”, it becomes clear why. Here’s an inspirational quote:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Mathematics is about turning difficult problems into Linear Algebra problems.”&lt;&#x2F;p&gt;
+&lt;p&gt;–Terence Tao&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Actually, it probably wasn’t Terence Tao who said that. I probably got the quote wrong too. Anywho, you get the point.&lt;&#x2F;p&gt;
+&lt;p&gt;Matrix equations will show up all the time if you work in a STEM field, and about half of modern mathematics is built on the theory of vector spaces. It’s a fundamental topic everywhere (and should be taught in high schools!) that deserves some special treatment, and so, the birth of this series. Look forward to my first post on image compression with Singular Value Decomposition!&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Proving RSA Encryption: An Application of Group Theory (Part 3: Digital Signatures and Euler&#x27;s Totient Function)</title>
+        <published>2020-07-18T00:00:00+00:00</published>
+        <updated>2020-07-18T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://simonxiang.xyz/blog/proving-rsa-encryption-an-application-of-group-theory-part-3-digital-signatures-and-eulers-totient-function/"/>
+        <id>https://simonxiang.xyz/blog/proving-rsa-encryption-an-application-of-group-theory-part-3-digital-signatures-and-eulers-totient-function/</id>
+        
+        <content type="html" xml:base="https://simonxiang.xyz/blog/proving-rsa-encryption-an-application-of-group-theory-part-3-digital-signatures-and-eulers-totient-function/">&lt;p&gt;We’ve finally proved Fermat’s Little Theorem and explained some of the machinery behind groups and rings. Let’s continue by defining an important function.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Definition&lt;&#x2F;strong&gt; &lt;em&gt;(Euler’s Totient Function):&lt;&#x2F;em&gt; Let $\varphi: \mathbb{Z}^+ \to \mathbb{Z}^+$ be defined as $\varphi(n) = $ the number of integers less than or equal to $n$ that are relatively prime to $n$ for $n \in \mathbb{Z}^+. \varphi$ is also known as the &lt;strong&gt;Euler phi-function&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;As you can see, it can be quite hard to procure a general formula for $\varphi(n)$ for all $n$. However, in some cases it is relatively easy— for example, if $n$ is prime, then $\varphi(n)$ is simply $n-1.$ Recall from the last post that the Euler phi-function simply defines the &lt;em&gt;order&lt;&#x2F;em&gt; of the multiplicative group of units $\mathbb{Z}_n^*.$ We now state an important theorem:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Theorem&lt;&#x2F;strong&gt; &lt;em&gt;(Euler’s Theorem):&lt;&#x2F;em&gt; Let $a \in \mathbb{Z}$ be relatively prime to $n,$ that is, $\text{gcd}(a,n)=1.$ Then
+$$
+a^{\varphi(n)} \equiv 1 , (\text{mod} , n),
+$$
+where $\varphi$ denotes the &lt;em&gt;&lt;strong&gt;Euler phi-function,&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt; and $n \in \mathbb{Z}^+.$&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Proof:&lt;&#x2F;strong&gt; Euler’s Theorem is equivalent to the following statement: For all $a \in \mathbb{Z}_n^*$, $a^{\varphi(n)} \equiv 1$ (mod $n$). We know from a previous theorem that any element of a finite group raised to the power of the order of the group is $1.$ Since $|\mathbb{Z}_n^*|=\varphi(n)$, we have
+$$
+a^{\varphi(n)} \equiv a^{|\mathbb{Z}_n^*|} \equiv 1 , (\text{mod} , n). \quad \boxtimes
+$$&lt;&#x2F;p&gt;
+&lt;p&gt;Notice that the reasoning behind the proof is almost the exact same as the proof of Fermat’s Little Theorem: &lt;strong&gt;Indeed, Euler’s Theorem is simply a &lt;em&gt;generalization&lt;&#x2F;em&gt; of Fermat’s Little Theorem—&lt;&#x2F;strong&gt; Fermat’s Little Theorem simply describes the case where $n$ is prime.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;em&gt;Update (2025): The rest has been omitted because I couldn’t get the KaTeK align environment working.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Proving RSA Encryption: An Application of Group Theory (Part 2: Fermat&#x27;s Little Theorem and Ring Theory)</title>
+        <published>2020-07-17T00:00:00+00:00</published>
+        <updated>2020-07-17T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://simonxiang.xyz/blog/proving-rsa-encryption-an-application-of-group-theory-part-2-fermats-little-theorem-and-ring-theory/"/>
+        <id>https://simonxiang.xyz/blog/proving-rsa-encryption-an-application-of-group-theory-part-2-fermats-little-theorem-and-ring-theory/</id>
+        
+        <content type="html" xml:base="https://simonxiang.xyz/blog/proving-rsa-encryption-an-application-of-group-theory-part-2-fermats-little-theorem-and-ring-theory/">&lt;p&gt;This post is going to be a little heavy on the group theory— I’m going to try to build everything from the ground up but having a prior understanding of the basics of groups will be very useful. Let’s start by stating an important theorem:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Theorem&lt;&#x2F;strong&gt; &lt;em&gt;(Fermat’s Little Theorem):&lt;&#x2F;em&gt; Let $a \in \mathbb{Z}$, $p$ a prime. If $p$ doesn’t divide $a$, then $p$ divides $a^{p-1} - 1$, that is,
+$$
+a^{p-1} \equiv 1 , (\text{mod} , p).
+$$
+Those with a background in number theory may be more familiar with this equivalent statement of the theorem: If $a \in \mathbb{Z}$, then $a^p \equiv a , (\text{mod} , p)$ for $p$ a prime.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Proof:&lt;&#x2F;strong&gt; &lt;em&gt;I have discovered a truly remarkable proof that is too large to be contained in the margins of this post.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Just kidding. Before we prove Fermat’s Little Theorem, let’s talk about groups and fields. Here’s how groups are defined (I’m going to let addition denote an arbitrary binary operation):&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Definition:&lt;&#x2F;strong&gt; A &lt;em&gt;&lt;strong&gt;group&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt; $\langle G,+ \rangle$ is a set $G$ closed under addition such that- $\mathscr{G}_1$ (Associativity): For all $a, b, c \in G,$
+$$
+(a+b)+c = a+(b+c)
+$$&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;$  \mathscr{G}_2$ (Identity): There exists an element $0 \in G$ such that for all $a \in G$,
+$$
+0+a=a+0=a.
+$$&lt;&#x2F;li&gt;
+&lt;li&gt;$  \mathscr{G}_3$ (Inverse): For all $a \in G$, there exists an $a’ \in G$ such that
+$$
+a + a’ = a’ + a = 0.
+$$&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The cool thing about groups is that they’re very simple yet powerful: as long as &lt;em&gt;&lt;strong&gt;any set&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt; paired with &lt;em&gt;&lt;strong&gt;any binary operation&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt; satisfies these axioms, it forms a group, and all the theorems from group theory apply to it. It doesn’t just have to be $\mathbb{R}$ with the standard addition, anything from the set of square matrices $(GL(n, \mathbb{C}))$ to the set of permutations on a regular $n$-gon $(S_n)$ form a group.&lt;&#x2F;p&gt;
+&lt;p&gt;Let’s prove a theorem that will come in handy later. Since this post is going to be very technical, I’m not going to explain the proof since I’ll have to explain everything that builds onto the main theorem used in the proof, Lagrange’s Theorem.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Theorem:&lt;&#x2F;strong&gt; Let $G$ be a finite group under multiplication (so 1 is now the identity), and let $|G|$ denote its cardinality (order). Then for all $a \in G$,
+$$
+a^{|G|} = 1.
+$$&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Proof:&lt;&#x2F;strong&gt; By &lt;em&gt;Lagrange’s Theorem&lt;&#x2F;em&gt;, the order of the element $a$ (the smallest positive integer $k$ such that $a^k=1$) must divide $|G|$, that is, $|G|=kn$ for some $n \in \mathbb{N}$. Then
+$$
+a^{|G|}=a^{kn}=(a^k)^n=1^n=1. \quad \boxtimes
+$$&lt;&#x2F;p&gt;
+&lt;p&gt;Let’s take a look at the specific group $\mathbb{Z}_p$, consisting of the set of integers
+$$
+\{0,1,2, … , p-1\}
+$$
+for $p$ a prime, paired with the binary operation of modular arithmetic. For example, $5+6$ (mod 7) $\equiv 11$ (mod 7) $\equiv 4$. I’ll leave it to you to check that this forms a group. We can actually go further: we can tack on a second binary operation (modular multiplication) and call it a &lt;em&gt;&lt;strong&gt;ring&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Rings have many properties, but the important ones are that multiplication is associative, follows the distributive law ($a*(b+c) = a*b + a*c$), and that the ring has an identity for multiplication (there exists an element $1 \in R$ such that $1*a=a*1=a$ for all $a \in R$). Formally, a ring that has an identity element is called a &lt;em&gt;ring with unity&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;The thing about rings is that &lt;em&gt;not every element has a multiplicative inverse&lt;&#x2F;em&gt; like groups do. For example, take the element $0$. Since $0+0=0$, $a*0=a*(0+0)=a*0+a*0$ for all $a \in R$. If $a*0=a*0+a*0$, just add the additive inverse of $a*0$ to both sides of the equation to yield $0=a*0+0=a*0$. So $a*0 = 0$ for all $a \in R$. Now if $0$ had a multiplicative inverse, that’s saying that there exists some element $0’ \in R$ such that $0’*0=1$, which is a contradiction since we would have both $0’*0=0$ and $0’*0=1$. Therefore $0$ cannot have a multiplicative inverse.&lt;&#x2F;p&gt;
+&lt;p&gt;Elements of rings that &lt;em&gt;do&lt;&#x2F;em&gt; have multiplicative inverses are called &lt;em&gt;&lt;strong&gt;units&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;. We have another handy theorem that lets us classify the units in $\mathbb{Z}_p$! However, I’m going to skip explaning the machinery behind the proof for the same reasons as the first proof.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Theorem:&lt;&#x2F;strong&gt; Let $n$ be the order of the ring $\mathbb{Z}_n$ and $m \in \mathbb{Z}_n$. Then if $\text{gcd}(m,n)=1, m$ is a &lt;em&gt;&lt;strong&gt;unit&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Proof:&lt;&#x2F;strong&gt; Since $\text{gcd}(m,n)=1$, for some $a, b \in \mathbb{Z}$, we have $an+bm=1$ by &lt;em&gt;Bezout’s Identity.&lt;&#x2F;em&gt; By the &lt;em&gt;Division Algorithm&lt;&#x2F;em&gt;, we know there exist integers $q$ and $r$ such that $0 \leq r \leq n-1$ and $b=nq+r$. Then
+$$
+rm = (b-nq)m = bm-nqm = (1-an)-nqm = 1 - n(a+qm).
+$$
+Since we live in the ring $\mathbb{Z}_n$, multiplication is commutative and multiples of $n$ will reduce to $0$ (mod $n$). Therefore $n(a+qm) \equiv 0 $ (mod $n$), and $rm=mr=1$. Since we have found a multiplicative inverse for $m \in \mathbb{Z}_n$, we conclude that $m$ is a unit. $\quad \boxtimes$&lt;&#x2F;p&gt;
+&lt;p&gt;There are special rings in which &lt;strong&gt;every non-zero element is a ring&lt;&#x2F;strong&gt; called &lt;em&gt;&lt;strong&gt;fields&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;. Intuively, fields are algebraic structures in which &lt;em&gt;division&lt;&#x2F;em&gt;  is legal, since every element is a unit and therefore will remain in the field if “divided by” (multiplied by the multiplicative inverse) of another element in the field. From the previous theorem, the wonderful fact that $\mathbb{Z}_p$ is a field for $p$ a prime follows! Notice that every non-zero element of $\mathbb{Z}_p$ is relatively prime to $p$ (that is, gcd$(m,p)=1$ for $m \in \mathbb{Z}_p$) since $p$ is a prime number, so every non-zero element of $\mathbb{Z}_p$ is a unit, hence $\mathbb{Z}_p$ is a field.&lt;&#x2F;p&gt;
+&lt;p&gt;Algebra is all about analyzing &lt;em&gt;structure&lt;&#x2F;em&gt;. Like a phoenix rising from its ashes, a group emerges from this field. We claim that the &lt;em&gt;&lt;strong&gt;set of units in $\mathbb{Z}_p$ form a group&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt; for $p$ a prime. The hardest part about showing that this is a group &lt;strong&gt;has already been done!&lt;&#x2F;strong&gt; That is, showing that every element has an inverse, which is trivial since every element is a unit.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;We are ready to prove Fermat’s Little Theorem&lt;&#x2F;strong&gt;. Before we do, note that $p$ doesn’t necessarily have to be prime for the set of units in $\mathbb{Z}_p$ to from a group. However, since $p$ is prime, we know that every non-zero element is a unit, and therefore we can easily classify this group as consisting of the elements
+$$
+\{1,2,3, … ,p-1\}
+$$
+and having order $p-1$. Let’s denote our new group as $\mathbb{Z}_p^*$. For convenience, we’ll restate Fermat’s Little Theorem.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Theorem&lt;&#x2F;strong&gt; &lt;em&gt;(The Little Theorem of Fermat):&lt;&#x2F;em&gt; Let $a \in \mathbb{Z}$, $p$ a prime. If $p$ doesn’t divide $a$, then $p$ divides $a^{p-1} - 1$, that is,
+$$
+a^{p-1} \equiv 1 , (\text{mod} , p).
+$$&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Proof:&lt;&#x2F;strong&gt; We can restate Fermat’s Little Theorem as such: For all $a \in \mathbb{Z}_p^*$, $a^{p-1} \equiv 1$ (mod $p$). Recall a previous theorem: &lt;em&gt;If $G$ is a finite group under multiplication, then $a^{|G|}=1$ for all $a \in G$.&lt;&#x2F;em&gt; Clearly $\mathbb{Z}_p^*$ is a finite group under multiplication, and the order of $\mathbb{Z}_p^*$ is $p-1$, that is, $|\mathbb{Z}_p^*|=p-1$. Therefore, for all $a \in \mathbb{Z}_p^*$,
+$$
+a^{p-1} \equiv a^{|\mathbb{Z}_p^*|} \equiv 1 , (\text{mod} , p). \quad \boxtimes
+$$&lt;&#x2F;p&gt;
+&lt;p&gt;(For the curious reader: Here is the reasoning behind why the two statements of FLT are equivalent. Every integer will correspond to a coset of the quotient ring $\mathbb{Z}&#x2F;p\mathbb{Z}.$ In other words, if $b \in \mathbb{Z}$, then $b \in a+p\mathbb{Z}$ for some $0 \lt a \leq p-1$ $(a \in \mathbb{Z}&#x2F;p\mathbb{Z}),$ which implies $a+p\mathbb{Z}=b+p\mathbb{Z}$ by the definition of cosets. So we can restate FLT as such: $\forall b+p\mathbb{Z}, (b+p\mathbb{Z})^{p-1} \equiv 1$ (mod $p$) which implies $\forall a+p\mathbb{Z}, (a+p\mathbb{Z})^{p-1} \equiv 1$ (mod $p$). Since $\mathbb{Z}&#x2F;p\mathbb{Z}$ and $\mathbb{Z}_p$ are naturally isomorphic as rings (similarily, $\mathbb{Z}&#x2F;p\mathbb{Z}^*$ and $\mathbb{Z}_p^*$ as groups), this statement is the same as $\forall a \in \mathbb{Z}_p, a^{p-1} \equiv 1$ (mod $p$). Therefore, FLT is equivalent to the alternate statement.)&lt;&#x2F;p&gt;
+&lt;p&gt;Once again, this post has grown quite long. I’ll wrap this series up in the next post, look forward to it!&lt;&#x2F;p&gt;
+&lt;p&gt;by &lt;strong&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;simonxiang.xyz&#x2F;&quot;&gt;Simon Xiang&lt;&#x2F;a&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Proving RSA Encryption: An Application of Group Theory (Part 1: Asymmetric Encryption)</title>
+        <published>2020-07-14T00:00:00+00:00</published>
+        <updated>2020-07-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://simonxiang.xyz/blog/proving-rsa-encryption-an-application-of-group-theory-part-1-asymmetric-encryption/"/>
+        <id>https://simonxiang.xyz/blog/proving-rsa-encryption-an-application-of-group-theory-part-1-asymmetric-encryption/</id>
+        
+        <content type="html" xml:base="https://simonxiang.xyz/blog/proving-rsa-encryption-an-application-of-group-theory-part-1-asymmetric-encryption/">&lt;p&gt;If someone receives an email from me, they might notice a peculiar “signature.asc” file attached at the bottom. This is not a bug— this is so the recipient can decrypt this file with the &lt;strong&gt;RSA encryption algorithm&lt;&#x2F;strong&gt; and verify that the sender is in fact, me, and the message has not been tampered with.&lt;&#x2F;p&gt;
+&lt;p&gt;In essence, how the RSA algorithm works is by multiplying two very large prime numbers, known only to the recipient of the message, and making the product public (this is known as a &lt;em&gt;&lt;strong&gt;public key&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;). The sender uses the product to encrypt a message using an algorithm that only someone with knowledge of the two prime numbers (known as the &lt;em&gt;&lt;strong&gt;private key&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;) can decrypt. We can leave the question of the computational difficulty of integer factorization, i.e., whether or not there exists an algorithm that factors large prime numbers in polynomial time, to the computer scientists (hopefully there isn’t, or else a large portion of modern day encryption becomes useless).&lt;&#x2F;p&gt;
+&lt;p&gt;What we’re concerned with, as mathematicians, is the &lt;strong&gt;validity&lt;&#x2F;strong&gt; of the algorithm. We want to know, given &lt;em&gt;&lt;strong&gt;any&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt; message, will the recipient &lt;em&gt;&lt;strong&gt;always&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt; be able to decrypt the encrypted message with their private key and get the right message? Let’s get right into the math— all you’ll need to be familiar with is some basic number theory.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Definition:&lt;&#x2F;strong&gt; Let $n$ be the product of two prime numbers $p$ and $q$ respectively, and $s$ be an integer relatively prime to $(p-1)(q-1)$. Let $p, q,$ and $s$ be part of the &lt;em&gt;&lt;strong&gt;private key&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;, and let $n$ and $r$ be part of the &lt;em&gt;&lt;strong&gt;public key&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;, where $r$ is the &lt;em&gt;multiplicative inverse&lt;&#x2F;em&gt; of $s$ mod $(p-1)(q-1)$. That is, $rs \equiv 1$ mod $(p-1)(q-1)$.&lt;&#x2F;p&gt;
+&lt;p&gt;The definitions may seem a little strange and arbitrary— no worries! Everything will fall into place over time. For now, our goal is to show that, using the public and private keys, the sender and recipient can &lt;em&gt;successfully complete an &lt;strong&gt;encryption&#x2F;decryption exchange&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;. Let’s define what that is real quick: in this case, let $m$ be the message being encrypted (Note that $m$ is an integer— there are several ways to encode messages as integers that we will not cover here for the sake of brevity).&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Encryption:&lt;&#x2F;strong&gt; Let $e$ equal the encrypted message, which is determined by
+$$
+e \equiv m^r , (\text{mod} , n).
+$$
+This is simple since $n$ and $r$ are known, and a computer can easily perform modular exponentiation in a reasonable amount of time.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Decryption:&lt;&#x2F;strong&gt; After receiving the encrypted message $e$, we decrypt it by computing
+$$
+e^s \equiv (m^r)^s \equiv m^{rs} \equiv m , (\text{mod} , n).
+$$
+We can do this because $s$ is part of the &lt;em&gt;&lt;strong&gt;private key&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;. Note that in this case, we’re dealing with a form of &lt;em&gt;&lt;strong&gt;asymmetric encryption&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;, since &lt;strong&gt;anyone with the public key&lt;&#x2F;strong&gt; can encrypt a message but &lt;strong&gt;only the owner of the private key&lt;&#x2F;strong&gt; can decrypt it. Everything makes sense up until the last implication. How does $m^{rs} \equiv m , (\text{mod} , n)$?&lt;&#x2F;p&gt;
+&lt;p&gt;We need a lemma.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Lemma:&lt;&#x2F;strong&gt; Let $n = pq$, where $p$ and $q$ are two distinct primes. If $a$ is an integer relatively prime to $n$ and $w$ is an integer such that $w=1$ mod $(p-1)(q-1)$, then
+$$
+a^w \equiv a , (\text{mod} , n).
+$$&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Proof:&lt;&#x2F;strong&gt; &lt;em&gt;Left as an exercise to the reader.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Just kidding. This lemma is built off a powerful theorem, whose proof relies heavily on group theory. Since this post is getting rather long, I’ll prove it in the next post, as well as shed some light on the intuition behind choosing the oddly specific number $(p-1)(q-1)$ for $s$ to be relatively prime to. Now that we have this lemma, the equivalence
+$$
+m^{rs} \equiv m , (\text{mod} , n)
+$$
+follows from the fact that we defined $r$ to be the &lt;em&gt;multiplicative inverse&lt;&#x2F;em&gt;  of $s$ (so $rs \equiv 1$ mod $(p-1)(q-1)$), and the lemma above, setting $a$ equal to $m$ and $w$ equal to $rs$.&lt;&#x2F;p&gt;
+&lt;p&gt;And there we have it! Look out for part two, where I’ll talk about digital signatures, group theory, and implementing this in real life.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Topological Continuity: Simplicity in Abstraction</title>
+        <published>2020-07-11T00:00:00+00:00</published>
+        <updated>2020-07-11T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://simonxiang.xyz/blog/topological-continuity-simplicity-in-abstraction/"/>
+        <id>https://simonxiang.xyz/blog/topological-continuity-simplicity-in-abstraction/</id>
+        
+        <content type="html" xml:base="https://simonxiang.xyz/blog/topological-continuity-simplicity-in-abstraction/">&lt;p&gt;Abstraction is often looked down upon by engineers and physicists as something mathematicians do to make life harder for themselves, obfuscate simple things, and make math less applicable in real life.&lt;&#x2F;p&gt;
+&lt;p&gt;However, the opposite is actually true— restricting your viewpoint to one set or space (say, $ \mathbb{R}^n $) makes things much more complicated than they have to be. &lt;strong&gt;Beauty and simplicity lie in levels of abstraction.&lt;&#x2F;strong&gt; Let’s take a look at an example, some prerequisites include basic knowledge of metric spaces and topological spaces.&lt;&#x2F;p&gt;
+&lt;p&gt;Here’s the standard rigorous definition of continuity from Real Analysis. We say $ f: \mathbb{R} \to \mathbb{R} $ is &lt;strong&gt;continuous&lt;&#x2F;strong&gt; at $ x_0 \in \mathbb{R} $ if for all $ \epsilon &amp;gt; 0 $, there exists a $ \delta &amp;gt; 0 $ such that&lt;&#x2F;p&gt;
+&lt;p&gt;$$
+|x - x_0| &amp;lt; \delta \implies |f(x)-f(x_0)| &amp;lt; \epsilon
+$$&lt;&#x2F;p&gt;
+&lt;p&gt;for all $ x \in \mathbb{R} $. Of course the domain doesn’t have to be $ \mathbb{R} $, it can be any interval, say $ A $. When a function is continuous for all $ x_0 \in A $, it’s &lt;em&gt;continuous on&lt;&#x2F;em&gt; $ A $. If a function is continuous on its domain, we just say it’s &lt;em&gt;continuous&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;That probably triggered some flashbacks for some poor Calculus students learning about limits for the first time (I too, feared the epsilon-delta dynamic duo up until I took Analysis). It doesn’t have to be this scary! Forget the strange Greek letters, let’s make this definition more powerful and simple at the same time.&lt;&#x2F;p&gt;
+&lt;p&gt;Observe that the absolute value signs are just measuring the &lt;em&gt;distance&lt;&#x2F;em&gt; between two points in $\mathbb{R}$, indeed, this seems like a job more suited for &lt;strong&gt;metric spaces&lt;&#x2F;strong&gt;. Let $\mathbb{R}$ be equipped with the standard metric $d$ such that $d: \mathbb{R} \times \mathbb{R} \to \mathbb{R}, , d(x,y) = |x-y|$. You can easily check that $d$ satisfies the conditions for a metric, so $(\mathbb{R},d)$ is a metric space. Now let’s rewrite our previous definition in metric terms: $f: \mathbb{R} \to \mathbb{R} $ is continuous at $ x_0 \in \mathbb{R} $ if for all $ \epsilon &amp;gt; 0 $, there exists a $ \delta &amp;gt; 0 $ such that
+$$
+d(x, x_0) &amp;lt; \delta \implies d(f(x),f(x_0)) &amp;lt; \epsilon.
+$$&lt;&#x2F;p&gt;
+&lt;p&gt;Recall the definition of an &lt;em&gt;open ball&lt;&#x2F;em&gt; in a metric space. Let $(X,d)$ be a metric space, $x_0 \in X, \gamma \gt 0$. Then we define an open ball as
+$$ B(x_0, \gamma) = \{ x \in X \mid d(x,x_0) &amp;lt; \gamma \}. $$
+Intuitively, it’s the set of all points a certain distance &lt;em&gt;gamma&lt;&#x2F;em&gt; away from another point $x_0$. Notice that the two expressions in the definition just refer to points $(x \in \mathbb{R})$ a certain positive distance $(\epsilon, \delta)$ away from another point $(x_0)$, hmmm…
+$$
+d(x, x_0) &amp;lt; \delta \implies d(f(x),f(x_0)) &amp;lt; \epsilon
+$$
+implies that
+$$
+x \in B(x_0, \delta) \implies f(x) \in B(f(x_0), \epsilon)
+$$
+which subsequently implies
+$$
+f\left[B(x_0, \delta) \right] \subset B(f(x_0),\epsilon).
+$$
+The last implication may seem somewhat arcane, but just look closer and you’ll see it quickly follows from the definition of the image of a set under a function. But wait! We haven’t even seen the final form of continuity yet! Recall that every metric space generates a topology, and that the metric topology is generated by defining open balls as open sets… Now we’re ready to define the final layer of abstraction, topological continuity.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Definition:&lt;&#x2F;strong&gt; Let $(X, \tau_x )$ and $(Y, \tau_y )$ be &lt;em&gt;topological spaces&lt;&#x2F;em&gt;. Then a function $f: X \to Y$ is &lt;strong&gt;continuous&lt;&#x2F;strong&gt; if for all open sets $H \in \tau_y, , f^{-1}(H) \in \tau_x.$&lt;&#x2F;p&gt;
+&lt;p&gt;The moment of truth: we transformed a convoluted epsilon delta definition into a simple, elegant, and much more widely applicable statement: &lt;em&gt;“A function is &lt;strong&gt;continuous&lt;&#x2F;strong&gt; if the pre-image of an open set is open.”&lt;&#x2F;em&gt; Not only is this statement much simpler, it also applies to all sorts of spaces— the set of binary sequences, a really long line, co-finite sets, anything. Isn’t that great?&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
