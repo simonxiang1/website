@@ -1,0 +1,103 @@
+---
+import { recentReading } from '../data/site';
+import ConstructionZone from './ConstructionZone.astro';
+import SesameCarousel from './SesameCarousel.astro';
+---
+
+<section class="instrument" aria-labelledby="extras-title">
+  <h2 id="extras-title">Extras</h2>
+
+  <div class="measurements">
+    <div class="measurement-column">
+      <details class="measurement">
+        <summary>
+          <span><b>sidequests</b></span>
+          <span class="measurement-toggle" aria-hidden="true">+</span>
+        </summary>
+        <div class="measurement-detail">
+          <ConstructionZone />
+          <ul class="sidequest-list">
+            <li>
+              Set out on a quest to run a sub 20 minute 5k in January 2026,
+              starting from 26 minutes. This should be achievable by EOY - I
+              just ran 21:24 in a time trial (August 2026). TODO: write more on
+              this in a blog post. Follow me on <a
+                href="https://www.strava.com/athletes/93955086"
+                target="_blank"
+                rel="noreferrer">Strava!</a
+              >
+            </li>
+            <li>
+              Dialing in the perfect espresso - Ascaso Uno and Option-O p64.
+              Currently brewing <a
+                href="https://anchorheadcoffee.com/products/guatemala-el-canchon"
+                target="_blank"
+                rel="noreferrer">Anchorhead Guatemala El Canchon</a
+              >. It has a really nice tea-like clarity with a hint of acidity.
+            </li>
+            <li>
+              Since I live in Seattle it's mandatory that I ski in the winter
+              and hike in the summer.
+            </li>
+            <li>
+              (<i>historical note</i>) Back at UT I did triathlon training,
+              which led to road cycling, and finally evolved into running. Also
+              learned basic tennis, golf, judo...too many hobbies too little
+              time. It's just running and table tennis nowadays.
+            </li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="measurement">
+        <summary>
+          <span><b>Sesame (my cat)</b></span>
+          <span class="measurement-toggle" aria-hidden="true">+</span>
+        </summary>
+        <div class="measurement-detail">
+          <p class="measurement-intro">Some photos of Sesame.</p>
+          <SesameCarousel />
+        </div>
+      </details>
+    </div>
+
+    <div class="measurement-column">
+      <details class="measurement">
+        <summary>
+          <span><b>table tennis</b></span>
+          <span class="measurement-toggle" aria-hidden="true">+</span>
+        </summary>
+        <div class="measurement-detail">
+          <ConstructionZone />
+          <ul>
+            <li>ping pong</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="measurement measurement-reading">
+        <summary>
+          <span><b>reading</b></span>
+          <span class="measurement-toggle" aria-hidden="true">+</span>
+        </summary>
+        <div class="measurement-detail">
+          <p class="measurement-intro">
+            Recent books/articles/things I've read.
+          </p>
+          <ul class="reading-list">
+            {
+              recentReading.map((book) => (
+                <li>
+                  <span>
+                    <cite>{book.title}</cite>
+                    <small class="reading-author">{book.author}</small>
+                  </span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>

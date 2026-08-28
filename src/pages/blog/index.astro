@@ -1,0 +1,226 @@
+---
+import { getCollection } from 'astro:content';
+import BlogPostList from '../../components/BlogPostList.astro';
+import { sortBlogPosts } from '../../data/blogPosts';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const blogPosts = sortBlogPosts(
+  await getCollection('blog_posts', ({ data }) => !data.draft),
+);
+const tags = [
+  ...new Set(blogPosts.flatMap((blogPost) => blogPost.data.tags ?? [])),
+].sort();
+---
+
+<BaseLayout title="Blog" description="Blog posts I've written.">
+  <header class="page-header">
+    <h1>Blog</h1>
+    <p>A collection of (mainly old) posts I've written.</p>
+  </header>
+  <div class="blog-filter" data-blog-filter hidden>
+    <div class="blog-filter-fields">
+      <label class="sr-only" for="blog-search">Search posts</label>
+      <input
+        class="blog-text-search"
+        id="blog-search"
+        type="search"
+        placeholder="Search posts"
+        autocomplete="off"
+        data-blog-search
+      />
+      <div class="tag-filter-token">
+        <span>tags</span>
+        <span aria-hidden="true">=</span>
+        <div class="tag-combobox" data-tag-combobox>
+          <div class="selected-tags" data-selected-tags></div>
+          <label class="sr-only" for="blog-tag-search">Find a tag</label>
+          <input
+            id="blog-tag-search"
+            class="tag-search"
+            type="text"
+            placeholder="add tag"
+            autocomplete="off"
+            role="combobox"
+            aria-autocomplete="list"
+            aria-expanded="false"
+            aria-controls="blog-tag-options"
+            data-tag-search
+          />
+          <ul
+            id="blog-tag-options"
+            class="tag-options"
+            role="listbox"
+            data-tag-options
+            hidden
+          >
+            {
+              tags.map((tag, index) => (
+                <li
+                  id={`blog-tag-option-${index}`}
+                  role="option"
+                  aria-selected="false"
+                  data-tag-option={tag}
+                  tabindex="-1"
+                >
+                  {tag}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="blog-filter-status" data-filter-status aria-live="polite"></p>
+  </div>
+  <section class="archive-list" aria-label="All blog posts">
+    <BlogPostList posts={blogPosts} detailed />
+  </section>
+</BaseLayout>
+
+<script>
+  const filter = document.querySelector<HTMLElement>('[data-blog-filter]');
+
+  if (filter) {
+    filter.hidden = false;
+
+    const search = filter.querySelector<HTMLInputElement>('[data-blog-search]');
+    const combobox = filter.querySelector<HTMLElement>('[data-tag-combobox]');
+    const tagSearch =
+      filter.querySelector<HTMLInputElement>('[data-tag-search]');
+    const optionList = filter.querySelector<HTMLElement>('[data-tag-options]');
+    const options = [
+      ...filter.querySelectorAll<HTMLElement>('[data-tag-option]'),
+    ];
+    const selectedList = filter.querySelector<HTMLElement>(
+      '[data-selected-tags]',
+    );
+    const entries = [
+      ...document.querySelectorAll<HTMLElement>('[data-blog-post-entry]'),
+    ];
+    const status = filter.querySelector<HTMLElement>('[data-filter-status]');
+    const selectedTags = new Set<string>();
+    let activeOption = -1;
+
+    const availableOptions = () =>
+      options.filter(
+        (option) =>
+          !option.hidden && !selectedTags.has(option.dataset.tagOption ?? ''),
+      );
+
+    const setOpen = (open: boolean) => {
+      if (!optionList || !tagSearch) return;
+      const hasOptions = availableOptions().length > 0;
+      optionList.hidden = !(open && hasOptions);
+      tagSearch.setAttribute('aria-expanded', String(open && hasOptions));
+      if (!open) {
+        activeOption = -1;
+        tagSearch.removeAttribute('aria-activedescendant');
+        options.forEach((option) => option.classList.remove('active'));
+      }
+    };
+
+    const refreshOptions = (open = true) => {
+      const query = tagSearch?.value.trim().toLowerCase() ?? '';
+      options.forEach((option) => {
+        const tag = option.dataset.tagOption ?? '';
+        option.hidden = selectedTags.has(tag) || !tag.includes(query);
+        option.classList.remove('active');
+      });
+      activeOption = -1;
+      setOpen(open);
+    };
+
+    const renderSelectedTags = () => {
+      if (!selectedList) return;
+      selectedList.replaceChildren();
+
+      selectedTags.forEach((tag) => {
+        const badge = document.createElement('span');
+        badge.className = 'selected-tag';
+        badge.append(tag);
+
+        const remove = document.createElement('button');
+        remove.type = 'button';
+        remove.setAttribute('aria-label', `Remove ${tag} filter`);
+        remove.innerHTML = '<span aria-hidden="true">×</span>';
+        remove.addEventListener('click', () => {
+          selectedTags.delete(tag);
+          renderSelectedTags();
+          refreshOptions(false);
+          update();
+        });
+
+        badge.append(remove);
+        selectedList.append(badge);
+      });
+    };
+
+    const selectTag = (tag: string) => {
+      if (!tag) return;
+      selectedTags.add(tag);
+      if (tagSearch) tagSearch.value = '';
+      renderSelectedTags();
+      refreshOptions(true);
+      update();
+      tagSearch?.focus();
+    };
+
+    const update = () => {
+      const query = search?.value.trim().toLowerCase() ?? '';
+      let visible = 0;
+
+      entries.forEach((entry) => {
+        const title = entry.dataset.title ?? '';
+        const tags = (entry.dataset.tags ?? '').split('|');
+        const matchesTag = [...selectedTags].every((tag) => tags.includes(tag));
+        const matchesQuery =
+          !query ||
+          title.includes(query) ||
+          tags.some((tag) => tag.includes(query));
+        entry.hidden = !(matchesTag && matchesQuery);
+        if (!entry.hidden) visible += 1;
+      });
+
+      if (status) {
+        status.textContent = `${visible} ${visible === 1 ? 'post' : 'posts'}`;
+      }
+    };
+
+    search?.addEventListener('input', update);
+    tagSearch?.addEventListener('focus', () => refreshOptions(true));
+    tagSearch?.addEventListener('input', () => refreshOptions(true));
+    tagSearch?.addEventListener('keydown', (event) => {
+      const available = availableOptions();
+
+      if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+        event.preventDefault();
+        if (available.length === 0) return;
+        const direction = event.key === 'ArrowDown' ? 1 : -1;
+        activeOption =
+          (activeOption + direction + available.length) % available.length;
+        options.forEach((option) => option.classList.remove('active'));
+        const option = available[activeOption];
+        option.classList.add('active');
+        tagSearch.setAttribute('aria-activedescendant', option.id);
+      } else if (event.key === 'Enter' && activeOption >= 0) {
+        event.preventDefault();
+        selectTag(available[activeOption]?.dataset.tagOption ?? '');
+      } else if (event.key === 'Escape') {
+        setOpen(false);
+      }
+    });
+
+    options.forEach((option) => {
+      option.addEventListener('pointerdown', (event) => event.preventDefault());
+      option.addEventListener('click', () =>
+        selectTag(option.dataset.tagOption ?? ''),
+      );
+    });
+
+    document.addEventListener('pointerdown', (event) => {
+      if (!combobox?.contains(event.target as Node)) setOpen(false);
+    });
+
+    update();
+  }
+</script>

@@ -1,0 +1,28 @@
+---
+import { projects } from '../data/site';
+
+interface Props {
+  limit?: number;
+}
+
+const { limit } = Astro.props;
+const visibleProjects =
+  typeof limit === 'number' ? projects.slice(0, limit) : projects;
+---
+
+<div class="project-list">
+  {
+    visibleProjects.map((project) => (
+      <article class="project-row">
+        <div class="project-name">
+          <h3>
+            <a href={project.href} target="_blank" rel="noreferrer">
+              {project.name}
+            </a>
+          </h3>
+        </div>
+        <p>{project.description}</p>
+      </article>
+    ))
+  }
+</div>

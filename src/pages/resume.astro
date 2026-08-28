@@ -1,0 +1,20 @@
+---
+import ConstructionZone from '../components/ConstructionZone.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Résumé" description="My résumé.">
+  <header class="page-header compact-page-header">
+    <h1>Résumé</h1>
+    <ConstructionZone />
+    <p>
+      <a href="/files/Simon_Xiang_resume.pdf" target="_blank" rel="noreferrer"
+        >Click here to download the PDF version.</a
+      >
+    </p>
+  </header>
+  <iframe
+    class="resume-frame"
+    src="/files/Simon_Xiang_resume.pdf"
+    title="Simon Xiang's résumé"></iframe>
+</BaseLayout>

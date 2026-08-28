@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About" description="About me page for Simon Xiang.">
+  <header class="page-header about-header">
+    <h1>About</h1>
+    <p class="about-copy">
+      Hi, I'm Simon. I studied pure mathematics at UT Austin and graduated in
+      Fall 2023. I was mainly interested in things like TQFTs and
+      low-dimensional topology. At some point I realized I wanted to make a
+      real-world impact instead of studying ∞-categories, so I pivoted to stuff
+      like probability (measure theory) and quantum information science.
+    </p>
+  </header>
+
+  <div class="about-interjection" aria-labelledby="sesame-title">
+    <figure>
+      <button
+        class="sesame-photo"
+        type="button"
+        aria-expanded="false"
+        aria-controls="sesame-theorem"
+      >
+        <img
+          src="/images/sesame.jpeg"
+          alt="Sesame, a majestic tabby cat, lounging on his cat tree in the late-afternoon sun"
+          width="2302"
+          height="2351"
+          loading="lazy"
+        />
+      </button>
+      <figcaption id="sesame-title">
+        Interjection: a picture of my cat, Sesame.
+      </figcaption>
+    </figure>
+    <p class="sesame-theorem" id="sesame-theorem" hidden>
+      <em>Lemma.</em> Every sufficiently warm rectangle eventually contains a cat.
+      <span aria-hidden="true">∎</span>
+    </p>
+  </div>
+  <p class="about-copy">
+    After graduating I worked as a quantitative researcher for a small family
+    office called North Cut Trading, spun off from QuantLab. I worked here for
+    about a year, before deciding that building things was more fun than reading
+    papers. Now I work as a software engineer at AWS. If you want to chat about
+    math, computers, or anything really - feel free to <a
+      href="mailto:simonzx.xiang@proton.me">reach out!</a
+    >
+  </p>
+</BaseLayout>
+
+<script>
+  const sesameButton =
+    document.querySelector<HTMLButtonElement>('.sesame-photo');
+  const theorem = document.querySelector<HTMLElement>('#sesame-theorem');
+
+  sesameButton?.addEventListener('click', () => {
+    const reveal = theorem?.hidden ?? false;
+    if (theorem) theorem.hidden = !reveal;
+    sesameButton.ariaExpanded = String(reveal);
+  });
+</script>

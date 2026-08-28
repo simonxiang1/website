@@ -1,0 +1,16 @@
+---
+import { profile } from '../data/site';
+---
+
+<footer class="site-footer">
+  <p>
+    <a href={`mailto:${profile.email}`}>email</a>
+    <a href={profile.github} target="_blank" rel="noreferrer">github</a>
+    <a href="/rss.xml">rss</a>
+    <a href="/resume/">résumé</a>
+  </p>
+  <p class="footer-note">
+    <i>Last updated: August 2026.</i>
+    <span aria-hidden="true">∎</span>
+  </p>
+</footer>

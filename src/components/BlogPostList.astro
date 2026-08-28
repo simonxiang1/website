@@ -1,0 +1,52 @@
+---
+import type { BlogPost } from '../data/blogPosts';
+import {
+  blogPostDateLabel,
+  blogPostDateValue,
+  blogPostSlug,
+  readingMinutes,
+} from '../data/blogPosts';
+
+interface Props {
+  posts: BlogPost[];
+  limit?: number;
+  detailed?: boolean;
+}
+
+const { posts, limit, detailed = false } = Astro.props;
+const visiblePosts = typeof limit === 'number' ? posts.slice(0, limit) : posts;
+---
+
+<ol class:list={['blog-post-list', { 'blog-post-list-detailed': detailed }]}>
+  {
+    visiblePosts.map((blogPost) => (
+      <li
+        data-blog-post-entry
+        data-title={blogPost.data.title.toLowerCase()}
+        data-tags={(blogPost.data.tags ?? []).join('|').toLowerCase()}
+      >
+        {detailed ? (
+          <a class="blog-post-entry" href={`/blog/${blogPostSlug(blogPost)}/`}>
+            <span class="blog-post-title">{blogPost.data.title}</span>
+            <span class="blog-post-meta">
+              <time datetime={blogPostDateValue(blogPost)}>
+                {blogPostDateLabel(blogPost)}
+              </time>
+              <span aria-hidden="true"> · </span>
+              <span>{readingMinutes(blogPost)} min read</span>
+            </span>
+            {(blogPost.data.tags?.length ?? 0) > 0 && (
+              <span class="blog-post-tags" aria-label="Tags">
+                {blogPost.data.tags?.map((tag) => (
+                  <span>{tag}</span>
+                ))}
+              </span>
+            )}
+          </a>
+        ) : (
+          <a href={`/blog/${blogPostSlug(blogPost)}/`}>{blogPost.data.title}</a>
+        )}
+      </li>
+    ))
+  }
+</ol>

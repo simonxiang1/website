@@ -1,0 +1,30 @@
+---
+import type { BlogPost } from '../data/blogPosts';
+import 'katex/dist/katex.min.css';
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  blogPost: BlogPost;
+  canonicalPath?: string;
+}
+
+const { blogPost, canonicalPath } = Astro.props;
+---
+
+<BaseLayout
+  title={blogPost.data.title}
+  description={blogPost.data.description ??
+    `A blog post by Simon Xiang: ${blogPost.data.title}`}
+  type="article"
+  canonicalPath={canonicalPath}
+>
+  <article class="blog-post-page">
+    <header class="blog-post-header">
+      <p class="eyebrow"><a href="/blog/">blog</a></p>
+      <h1>{blogPost.data.title}</h1>
+    </header>
+    <div class="prose">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>

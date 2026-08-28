@@ -1,0 +1,85 @@
+---
+import { sesamePhotos } from '../data/site';
+---
+
+<div
+  class="cat-carousel"
+  data-cat-carousel
+  tabindex="0"
+  aria-label="Sesame photo carousel"
+>
+  <div class="cat-carousel-frame">
+    {
+      sesamePhotos.map((photo, index) => (
+        <figure class="cat-slide" hidden={index !== 0}>
+          <img
+            src={photo.src}
+            alt={photo.alt}
+            width={photo.width}
+            height={photo.height}
+            loading="lazy"
+          />
+          <figcaption>
+            <span>
+              {index + 1} / {sesamePhotos.length}
+            </span>
+            <span>{photo.caption}</span>
+          </figcaption>
+        </figure>
+      ))
+    }
+  </div>
+
+  <div class="cat-carousel-controls">
+    <button type="button" data-carousel-prev aria-label="Previous cat photo">
+      ←
+    </button>
+    <span data-carousel-status aria-live="polite"
+      >1 / {sesamePhotos.length}</span
+    >
+    <button type="button" data-carousel-next aria-label="Next cat photo"
+      >→</button
+    >
+  </div>
+</div>
+
+<script>
+  document
+    .querySelectorAll<HTMLElement>('[data-cat-carousel]')
+    .forEach((root) => {
+      const slides = Array.from(
+        root.querySelectorAll<HTMLElement>('.cat-slide'),
+      );
+      const status = root.querySelector<HTMLElement>('[data-carousel-status]');
+      let index = 0;
+
+      function show(nextIndex: number) {
+        index = (nextIndex + slides.length) % slides.length;
+        slides.forEach((slide, slideIndex) => {
+          slide.hidden = slideIndex !== index;
+        });
+        if (status) status.textContent = `${index + 1} / ${slides.length}`;
+      }
+
+      root
+        .querySelector('[data-carousel-prev]')
+        ?.addEventListener('click', () => {
+          show(index - 1);
+        });
+      root
+        .querySelector('[data-carousel-next]')
+        ?.addEventListener('click', () => {
+          show(index + 1);
+        });
+      root.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          show(index - 1);
+        }
+        if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          show(index + 1);
+        }
+      });
+    });
+</script>

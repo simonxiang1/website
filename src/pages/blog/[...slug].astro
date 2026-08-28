@@ -1,0 +1,32 @@
+---
+import { getCollection, render } from 'astro:content';
+import { blogPostId, blogPostSlug } from '../../data/blogPosts';
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+
+export async function getStaticPaths() {
+  const blogPosts = await getCollection(
+    'blog_posts',
+    ({ data }) => !data.draft,
+  );
+  return blogPosts.flatMap((blogPost) => [
+    {
+      params: { slug: blogPostSlug(blogPost) },
+      props: { blogPost },
+    },
+    {
+      params: { slug: blogPostId(blogPost) },
+      props: { blogPost },
+    },
+  ]);
+}
+
+const { blogPost } = Astro.props;
+const { Content } = await render(blogPost);
+---
+
+<BlogPostLayout
+  blogPost={blogPost}
+  canonicalPath={`/blog/${blogPostSlug(blogPost)}/`}
+>
+  <Content />
+</BlogPostLayout>
