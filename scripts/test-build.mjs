@@ -41,8 +41,8 @@ assert.match(
 );
 assert.match(
   styles,
-  /--serif:\s*'Iowan Old Style',\s*'Source Serif 4 Web'/,
-  'Iowan Old Style must remain preferred over the bundled mobile fallback',
+  /--serif:\s*'Iowan Old Style',\s*'Palatino Linotype',[^;]*'Source Serif 4 Web'/s,
+  'Iowan and Palatino must remain preferred over the bundled mobile fallback',
 );
 assert.match(
   blog,
