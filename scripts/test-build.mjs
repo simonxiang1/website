@@ -34,6 +34,21 @@ assert.match(
   /\.about-copy\s*{[^}]*font-size:\s*1\.1rem;/s,
   'The shared About prose style must define its font size',
 );
+assert.match(
+  styles,
+  /@font-face\s*{[^}]*font-family:\s*'Newsreader';[^}]*newsreader-latin\.woff2/s,
+  'The bundled Newsreader font must be declared',
+);
+assert.match(
+  home,
+  /rel="preload" href="\/fonts\/newsreader-latin\.woff2" as="font" type="font\/woff2" crossorigin/,
+  'The primary Newsreader font must be preloaded',
+);
+assert.match(
+  blog,
+  /<time datetime="\d{4}-\d{2}-\d{2}">\d{2}\.\d{2}\.\d{4}<\/time>/,
+  'Blog dates must render as MM.DD.YYYY',
+);
 
 assert.match(
   resume,

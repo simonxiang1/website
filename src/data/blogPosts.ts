@@ -20,7 +20,7 @@ export function blogPostDateLabel(blogPost: BlogPost): string {
     .toISOString()
     .slice(0, 10)
     .split('-');
-  return `${day}.${month}.${year}`;
+  return `${month}.${day}.${year}`;
 }
 
 export function blogPostDateValue(blogPost: BlogPost): string {
