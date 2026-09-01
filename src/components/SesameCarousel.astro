@@ -17,7 +17,8 @@ import { sesamePhotos } from '../data/site';
             alt={photo.alt}
             width={photo.width}
             height={photo.height}
-            loading="lazy"
+            loading={index === 0 ? 'eager' : 'lazy'}
+            fetchpriority={index === 0 ? 'high' : 'auto'}
           />
           <figcaption>
             <span>
@@ -53,13 +54,26 @@ import { sesamePhotos } from '../data/site';
       const status = root.querySelector<HTMLElement>('[data-carousel-status]');
       let index = 0;
 
+      function preload(slideIndex: number) {
+        const normalizedIndex = (slideIndex + slides.length) % slides.length;
+        const image = slides[normalizedIndex]?.querySelector('img');
+        if (!image) return;
+        image.loading = 'eager';
+        void image.decode().catch(() => undefined);
+      }
+
       function show(nextIndex: number) {
         index = (nextIndex + slides.length) % slides.length;
         slides.forEach((slide, slideIndex) => {
           slide.hidden = slideIndex !== index;
         });
         if (status) status.textContent = `${index + 1} / ${slides.length}`;
+        preload(index - 1);
+        preload(index + 1);
       }
+
+      preload(0);
+      preload(1);
 
       root
         .querySelector('[data-carousel-prev]')

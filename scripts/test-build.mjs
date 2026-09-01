@@ -36,13 +36,13 @@ assert.match(
 );
 assert.match(
   styles,
-  /@font-face\s*{[^}]*font-family:\s*'Newsreader';[^}]*newsreader-latin\.woff2/s,
-  'The bundled Newsreader font must be declared',
+  /@font-face\s*{[^}]*font-family:\s*'Source Serif 4 Web';[^}]*source-serif-4-latin\.woff2/s,
+  'The mobile fallback font must be declared',
 );
 assert.match(
-  home,
-  /rel="preload" href="\/fonts\/newsreader-latin\.woff2" as="font" type="font\/woff2" crossorigin/,
-  'The primary Newsreader font must be preloaded',
+  styles,
+  /--serif:\s*'Iowan Old Style',\s*'Source Serif 4 Web'/,
+  'Iowan Old Style must remain preferred over the bundled mobile fallback',
 );
 assert.match(
   blog,
