@@ -75,11 +75,19 @@ const socialImage = new URL(image, Astro.site);
         }
       })();
     </script>
-    <script
-      is:inline
-      defer
-      src="https://cloud.umami.is/script.js"
-      data-website-id="fa80f253-25df-4683-b755-8a0caa0b0151"></script>
+    <script is:inline>
+      window.addEventListener(
+        'load',
+        () => {
+          const analytics = document.createElement('script');
+          analytics.src = 'https://cloud.umami.is/script.js';
+          analytics.dataset.websiteId = 'fa80f253-25df-4683-b755-8a0caa0b0151';
+          analytics.async = true;
+          document.head.append(analytics);
+        },
+        { once: true },
+      );
+    </script>
   </head>
   <body>
     <!-- hello fellow source reader. yes, the espresso number is suspiciously specific. -->

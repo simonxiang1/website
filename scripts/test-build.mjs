@@ -49,6 +49,26 @@ assert.match(
   /<time datetime="\d{4}-\d{2}-\d{2}">\d{2}\.\d{2}\.\d{4}<\/time>/,
   'Blog dates must render as MM.DD.YYYY',
 );
+assert.match(
+  home,
+  /src="\/icons\/site-mark-64\.png"/,
+  'The header must use the display-sized site mark',
+);
+assert.doesNotMatch(
+  home,
+  /loading="eager"/,
+  'The Home page must not eagerly load collapsed carousel photos',
+);
+assert.match(
+  about,
+  /<source srcset="\/images\/sesame-about\.webp" type="image\/webp">/,
+  'The About page must offer its optimized Sesame image',
+);
+assert.doesNotMatch(
+  home,
+  /<script[^>]+src="https:\/\/cloud\.umami\.is\/script\.js"/,
+  'Analytics must not compete with the initial page load',
+);
 
 assert.match(
   resume,

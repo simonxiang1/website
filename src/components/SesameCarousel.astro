@@ -17,8 +17,8 @@ import { sesamePhotos } from '../data/site';
             alt={photo.alt}
             width={photo.width}
             height={photo.height}
-            loading={index === 0 ? 'eager' : 'lazy'}
-            fetchpriority={index === 0 ? 'high' : 'auto'}
+            loading="lazy"
+            decoding="async"
           />
           <figcaption>
             <span>
@@ -72,8 +72,15 @@ import { sesamePhotos } from '../data/site';
         preload(index + 1);
       }
 
-      preload(0);
-      preload(1);
+      const disclosure = root.closest('details');
+      const warmCarousel = () => {
+        if (disclosure && !disclosure.open) return;
+        preload(0);
+        preload(1);
+      };
+
+      disclosure?.addEventListener('toggle', warmCarousel);
+      warmCarousel();
 
       root
         .querySelector('[data-carousel-prev]')

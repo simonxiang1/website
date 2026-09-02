@@ -22,13 +22,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         aria-expanded="false"
         aria-controls="sesame-theorem"
       >
-        <img
-          src="/images/sesame.jpeg"
-          alt="Sesame, a majestic tabby cat, lounging on his cat tree in the late-afternoon sun"
-          width="2302"
-          height="2351"
-          loading="lazy"
-        />
+        <picture>
+          <source srcset="/images/sesame-about.webp" type="image/webp" />
+          <img
+            src="/images/sesame.jpeg"
+            alt="Sesame, a majestic tabby cat, lounging on his cat tree in the late-afternoon sun"
+            width="940"
+            height="960"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </picture>
       </button>
       <figcaption id="sesame-title">
         Interjection: a picture of my cat, Sesame.

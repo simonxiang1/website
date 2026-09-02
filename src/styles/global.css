@@ -637,6 +637,10 @@ a:hover {
   cursor: pointer;
 }
 
+.sesame-photo picture {
+  display: block;
+}
+
 .sesame-photo img {
   width: 100%;
   height: auto;
